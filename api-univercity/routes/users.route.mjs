@@ -8,6 +8,14 @@ export const usersRoutes = (controller) => {
     controller.showHome(req, res);
   });
 
+  router.get("/add", (req, res) => {
+    controller.showAddUser(req, res);
+  });
+
+  router.post("/add", (req, res) => {
+    controller.createUser(req, res);
+  });
+
   return router;
 };
 

@@ -2,14 +2,15 @@
   <h1>ALed</h1>
 </div>
 
+<button><a href="/api/events/add">Add events</a></button>
 <ul>
-  {{#each users}}
+  {{#each events}}
     <li>
-      <p>Nom : {{this.lastName}}</p>
-      <br>
-      <p>Prénom : {{this.firstName}}</p>
-      <br>
-      <p>Email : {{this.email}}</p>
+      <button><a href="/api/events/edit/{{this._id}}">Editer</a></button>
+      <p>Nom : {{this.name}}</p>
+      <p>date Debut : {{this.dateBegin}}</p>
+      <p>date fin : {{this.dateEnd}}</p>
+      <p>description : {{this.description}}</p>
     </li>
   {{/each}}
 </ul>
