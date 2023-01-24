@@ -1,24 +1,34 @@
-import logo from './logo.svg';
+import bgHead from './head-campus.png';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <>
+      <div class="index-head">
+        <h1>Univercity</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Un avenir étudiant épanouissant,
+          <br />
+          une Cité universitaire révolutionnaire
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Projet de fou
-        </a>
-      </header>
-    </div>
+      </div>
+      <div class="campus-presentation">
+        <h2>Notre campus</h2>
+        <p>
+          La Cité universitaire UniverCity est un lieu de vie et d'apprentissage
+          exceptionnel, offrant un cadre de vie idéal pour les étudiants. Le
+          campus se compose d'un parc d'attractions futuriste, des salles de
+          sports, des gymnases, des piscines, des commerces et des logements
+          étudiants à prix avantageux. Les étudiants peuvent bénéficier d'un
+          système de points qui leur permet d'obtenir des réductions, de payer
+          les transports en commun et de bénéficier d'autres avantages. Les
+          étudiants peuvent également participer à des projets pour améliorer
+          les conditions de vie dans la ville et avoir des possibilités de
+          travailler dans la ville après les études.
+        </p>
+        <a href="/campus">Voir plus</a>
+      </div>
+    </>
   );
 }
 
