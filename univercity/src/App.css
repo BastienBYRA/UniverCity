@@ -51,18 +51,24 @@
 }
 
 .footer {
-  margin: 0;
-  padding: 0;
   background-color: #3A3A3A;
   color: white;
   position: static;
   bottom: 0;
   width: 100%;
-  /* display: flex;
-  align-self: flex-start;
-  margin-top: auto; */
+  display: flex;
+}
+
+.footer .gauche {
+  padding: 2rem;
+}
+
+.footer .droite {
+  padding: 2rem;
 }
 
 .footer p {
+  font-size: 1rem;
   margin-bottom: 0;
+  padding: 10px 0 0 10px;
 }

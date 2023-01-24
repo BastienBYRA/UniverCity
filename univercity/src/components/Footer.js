@@ -11,6 +11,7 @@ class Footer extends React.Component {
                 <p>Téléphone : 06 00 00 00 00</p>
                 <p>Mail : secretariat.campus@univercity.fr</p>
                 <p>Adresse : Univercity</p>
+                <a href="/mentions-legales" className="block py-2 pl-3 text-gray-200 hover:text-white underline text-base">Mentions légales</a>
 
             </div>
 
