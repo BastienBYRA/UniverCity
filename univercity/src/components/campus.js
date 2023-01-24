@@ -1,4 +1,4 @@
-const Layout = () => {
+const CampusHead = () => {
   return (
     <>
       <div class="index-head">
@@ -29,4 +29,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default CampusHead;
