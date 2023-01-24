@@ -6,11 +6,11 @@ import Header from './components/Header';
 
 function App() {
   return (
-    <>
-      <Header />
+    <div className="relative">
       {/* <CampusHead/> */}
-      <DescriptionPage />
-    </>
+      {/*  <DescriptionPage />*/}
+        <Header />
+    </div>
   );
 }
 

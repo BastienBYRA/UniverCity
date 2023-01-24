@@ -1,7 +1,7 @@
 const CampusHead = () => {
   return (
     <>
-      <div class="index-head">
+      <div className="index-head">
         <h1>Univercity</h1>
         <p>
           Un avenir étudiant épanouissant,
@@ -9,7 +9,7 @@ const CampusHead = () => {
           une Cité universitaire révolutionnaire
         </p>
       </div>
-      <div class="campus-presentation">
+      <div className="campus-presentation">
         <h2>Notre campus</h2>
         <p>
           La Cité universitaire UniverCity est un lieu de vie et d'apprentissage

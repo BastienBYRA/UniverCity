@@ -9,7 +9,7 @@ class Header extends React.Component {
     }
 
     render() {
-        return <header>
+        return <header className="mb-12">
 
             <nav className="bg-gray-600 px-2 sm:px-4 py-2.5">
                 <div className="container flex flex-wrap items-center justify-between mx-auto">
