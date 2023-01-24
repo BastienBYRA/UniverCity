@@ -5,7 +5,8 @@ import DescriptionPage from './pages/Description';
 function App() {
   return (
     <>
-    <CampusHead/>
+    {/* <CampusHead/> */}
+    <DescriptionPage />
     </>
   );
 }

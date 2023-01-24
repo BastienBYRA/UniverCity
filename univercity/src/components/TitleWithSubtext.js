@@ -8,8 +8,8 @@ class TitleWithSubtext extends React.Component {
     }
     render() {
         return (
-        <div>
-            <h2>{this.title}</h2>
+        <div className="mt-5">
+            <h2 className="underline font-bold">{this.title}</h2>
             <p>{this.description}</p>
         </div>
         )
