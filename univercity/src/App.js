@@ -3,13 +3,18 @@ import './App.css';
 import DescriptionPage from './pages/Description';
 import React from 'react';
 import Header from './components/Header';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="relative">
-      {/* <CampusHead/> */}
-      {/*  <DescriptionPage />*/}
+    <div>
         <Header />
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<CampusHead />}/>
+                <Route path="description" element={<DescriptionPage />} />
+            </Routes>
+        </BrowserRouter>
     </div>
   );
 }
