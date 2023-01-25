@@ -12,6 +12,60 @@
   margin-bottom: 40px;
 }
 
+.inscription-body{
+  width:70%;
+  margin:auto;
+}
+
+.input-row{
+  display:flex;
+  justify-content: space-around;
+  width:100%;
+  margin:20px;
+}
+.input-col{
+  width:30%;
+  display: flex;
+  justify-content: space-around;
+}
+.input-col div{
+  padding:5px;
+  border:2px solid orange;
+  height:30px;
+  align-items: center;
+  position:relative;
+  width:200px;
+}
+.input-col i{
+  margin-right:15px;
+  color:orange;
+  font-size:26px;
+}
+.input-row input{
+  border:none;
+  background:none;
+  position:absolute;
+  top:5px;
+  height:30px;
+  left:30px;
+}
+.inscription-body h2{
+  text-align: center;
+}
+.envoie{
+  text-align: center;
+}
+.envoie button{
+  background:orange;
+  border:none;
+  border-radius: 8px;
+  color:WHITE;
+  font-weight: bold;
+  padding:10px;
+  font-size:24px;
+  margin-bottom: 30px;
+}
+
 .index-head h1 {
   position: absolute;
   top: 10px;
