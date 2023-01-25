@@ -9,15 +9,11 @@ const usersSchema = mongoose.Schema(
     password: String,
     mobile: String,
     INE: String,
-    subjects: [
-      {
-        type: String,
-      },
-    ],
+    subjects: [{ type: mongoose.Schema.Types.ObjectId, ref: "Subjects" }],
   },
   {
     timestamps: true,
   }
 );
 
-export const User = mongoose.model("User", usersSchema, "univercity");
+export const User = mongoose.model("User", usersSchema);

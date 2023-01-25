@@ -13,4 +13,4 @@ import { mongoose } from "mongoose";
     }
   );
 
-  export const Events = mongoose.model("Events", eventsSchema, 'univercity');
+  export const Events = mongoose.model("Events", eventsSchema);

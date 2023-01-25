@@ -1,80 +1,125 @@
 export class UsersController {
-    repository;
-  
-    constructor(repository) {
-      this.repository = repository;
-    }
-  
-    showHome(req, res) {
-      console.log('CONTROLLER');
-      this.repository
-        .getAll()
-        .then((users) => {
-          res.render("home", { users });
-        })
-        .catch((err) => {
-          console.log("showHome error", err);
-          res.sendStatus(500);
-        });
-    }
+  usersRepository;
+  subjectsRepository;
 
-    showAddUser(req, res) {
-      res.render("edit", { user: {} });
-    }
-
-    createFormation(req, res) {
-      console.log('HHHHHHHHHHHHHHHHAAAAAAAAAAAAAAAAAAAAA');
-      
-      const { name, duration, description, eduLevelAfter, numMAxPersons, image } = req.body
-      this.repository
-        .create(name, duration, description, eduLevelAfter, numMAxPersons, image)
-        .then(() => {
-          res.redirect("/api/formations");
-        })
-        .catch((err) => {
-          console.log("createFormation error", err);
-          
-          res.render("error", { code: 500, error: err });
-        });
-    }
-
-    showEditFormation(req, res) {
-      const id = req.params.id;
-      this.repository
-        .getOne(id)
-        .then((formation) => {
-          res.render("edit", { formation });
-        })
-        .catch((err) => {
-          res.render("error", { code: 404, error: err });
-        });
-    }
-  
-    modifyFormation(req, res) {
-      const { name, duration, description, eduLevelAfter, numMAxPersons, image } = req.body;
-      const id = req.params.id;
-  
-      this.repository
-        .update(id, name, duration, description, eduLevelAfter, numMAxPersons, image)
-        .then(() => {
-          res.redirect("/api/formations");
-        })
-        .catch((err) => {
-          console.log("createFormation error", err);
-          res.render("error", { code: 500, error: err });
-        });
-    }
-  
-    deleteFormation(req, res) {
-      const id = req.params.id;
-      this.repository
-        .deleteOne(id)
-        .then(() => {
-          res.redirect("/api/formations");
-        })
-        .catch((err) => {
-          res.render("error", { code: 404, error: err });
-        });
-    }
+  constructor(usersRepository, subjectsRepository) {
+    this.usersRepository = usersRepository;
+    this.subjectsRepository = subjectsRepository;
   }
-  
+
+  showHome(req, res) {
+    this.usersRepository
+      .getAll()
+      .then((users) => {
+        res.render("home", { users });
+      })
+      .catch((err) => {
+        res.sendStatus(500);
+      });
+  }
+
+  showAddUser(req, res) {
+    this.subjectsRepository.getAll().then((subjectsForUser) => {
+      res.render("edit", { user: {}, subjectsForUser });
+    });
+  }
+
+  createUser(req, res) {
+    const {
+      email,
+      lastName,
+      firstName,
+      login,
+      password,
+      mobile,
+      INE,
+      subjects,
+    } = req.body;
+    this.usersRepository
+      .create(
+        email,
+        lastName,
+        firstName,
+        login,
+        password,
+        mobile,
+        INE,
+        subjects
+      )
+      .then(() => {
+        res.redirect("/api/users");
+      })
+      .catch((err) => {
+        console.log("createuser error", err);
+
+        res.render("error", { code: 500, error: err });
+      });
+  }
+
+  showEditUser(req, res) {
+    const id = req.params.id;
+    let subjectsForUser = [];
+    this.subjectsRepository
+      .getAll()
+      .then((_subjectsForUser) => {
+        subjectsForUser = _subjectsForUser;
+      })
+      .then(() => {
+        this.usersRepository
+          .getOne(id)
+          .then((user) => {
+            res.render("edit", { user, subjectsForUser });
+          })
+          .catch((err) => {
+            res.render("error", { code: 404, error: err });
+          });
+      })
+      .catch((err) => {});
+  }
+
+  modifyUser(req, res) {
+    const {
+      email,
+      lastName,
+      firstName,
+      login,
+      password,
+      mobile,
+      INE,
+      subjects,
+    } = req.body;
+    const id = req.params.id;
+
+    this.usersRepository
+      .update(
+        id,
+        email,
+        lastName,
+        firstName,
+        login,
+        password,
+        mobile,
+        INE,
+        subjects
+      )
+      .then(() => {
+        res.redirect("/api/users");
+      })
+      .catch((err) => {
+        console.log("createuser error", err);
+        res.render("error", { code: 500, error: err });
+      });
+  }
+
+  deleteUser(req, res) {
+    const id = req.params.id;
+    this.usersRepository
+      .deleteOne(id)
+      .then(() => {
+        res.redirect("/api/users");
+      })
+      .catch((err) => {
+        res.render("error", { code: 404, error: err });
+      });
+  }
+}
