@@ -1,4 +1,37 @@
-const Inscription = () => {
+//npm i emailjs-com
+import { useState } from "react";
+import { send } from "emailjs-com";
+
+function Inscription() {
+  const [toSend, setToSend] = useState({
+    nom: "",
+    prenom: "",
+    login: "",
+    password: "",
+    mail: "",
+    phone: "",
+  });
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    send(
+      'service_1moaqcg',
+      'template_abb0hw4',
+      toSend,
+      '_V3LhgrfdjaGZwS3S'
+    )
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+      })
+      .catch((err) => {
+        console.log('FAILED...', err);
+      });
+  };
+
+  const handleChange = (e) => {
+    setToSend({ ...toSend, [e.target.name]: e.target.value });
+  };
+
   return (
     <>
       <div class="index-head">
@@ -45,20 +78,30 @@ const Inscription = () => {
           </li>
         </ul>
         <h2>Inscrivez vous</h2>
-        <form>
+        <form onSubmit={onSubmit}>
           <div class="input-row">
             <div class="input-col">
               <label>Nom</label>
               <div>
                 <i class="fa fa-angle-right"></i>
-                <input type="text" name="nom" />
+                <input
+                  type="text"
+                  name="nom"
+                  value={toSend.nom}
+                  onChange={handleChange}
+                />
               </div>
             </div>
             <div class="input-col">
               <label>Prénom</label>
               <div>
                 <i class="fa fa-angle-right"></i>
-                <input type="text" name="prenom" />
+                <input
+                  type="text"
+                  name="prenom"
+                  value={toSend.prenom}
+                  onChange={handleChange}
+                />
               </div>
             </div>
           </div>
@@ -67,14 +110,24 @@ const Inscription = () => {
               <label>Login</label>
               <div>
                 <i class="fa fa-angle-right"></i>
-                <input type="text" name="login" />
+                <input
+                  type="text"
+                  name="login"
+                  value={toSend.login}
+                  onChange={handleChange}
+                />
               </div>
             </div>
             <div class="input-col">
               <label>Mot de passe</label>
               <div>
                 <i class="fa fa-angle-right"></i>
-                <input type="text" name="password" />
+                <input
+                  type="text"
+                  name="password"
+                  value={toSend.password}
+                  onChange={handleChange}
+                />
               </div>
             </div>
           </div>
@@ -83,14 +136,24 @@ const Inscription = () => {
               <label>Mail</label>
               <div>
                 <i class="fa fa-angle-right"></i>
-                <input type="mail" name="mail" />
+                <input
+                  type="mail"
+                  name="mail"
+                  value={toSend.mail}
+                  onChange={handleChange}
+                />
               </div>
             </div>
             <div class="input-col">
               <label>Mobile</label>
               <div>
                 <i class="fa fa-angle-right"></i>
-                <input type="number" name="phone" />
+                <input
+                  type="number"
+                  name="phone"
+                  value={toSend.phone}
+                  onChange={handleChange}
+                />
               </div>
             </div>
           </div>
@@ -101,6 +164,6 @@ const Inscription = () => {
       </div>
     </>
   );
-};
+}
 
 export default Inscription;
