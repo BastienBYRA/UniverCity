@@ -1,0 +1,45 @@
+{{#if error}}
+  <div class="alert">
+    {{error}}
+  </div>
+{{/if}}
+<div class="card">
+  <div class="card-content">
+  {{#if event._id}}
+    <form method="POST" action="/api/events/edit/{{event._id}}" novalidate>
+  {{else}}
+    <form method="POST" action="/api/events/add" novalidate>
+  {{/if}}
+      <div class="field">
+        <div class="control">
+          <input class="input" name="name" placeholder='name' value="{{event.name}}">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <textarea name="description">{{event.description}}</textarea>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <label for="dateBegin">date début</label>
+          <input class="input" name="dateBegin" type="date" value="{{event.dateBegin}}">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <label for="dateBegin">date fin</label>
+          <input class="input" name="dateEnd" type="date" placeholder='date de fin' value="{{event.dateEnd}}">
+        </div>
+      </div>
+      <div class="content">
+        <a class="button" href="/api/events">
+          Cancel
+        </a>
+        <button class="button" type="submit">
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div id="add-button-research-bar-container">
+  <h1>ALed</h1>
+</div>
+
+<button><a href="/api/events/add">Add events</a></button>
+<ul>
+  {{#each events}}
+    <li>
+      <button><a href="/api/events/edit/{{this._id}}">Editer</a></button>
+      <p>Nom : {{this.name}}</p>
+      <p>date Debut : {{this.dateBegin}}</p>
+      <p>date fin : {{this.dateEnd}}</p>
+      <p>description : {{this.description}}</p>
+    </li>
+  {{/each}}
+</ul>
