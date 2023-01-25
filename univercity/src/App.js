@@ -1,18 +1,18 @@
-import React from 'react';
-import Header from './components/Header';
-import DescriptionPage from './pages/Description';
-import ActuPage from './pages/Actus.js';
+import React from "react";
+import Header from "./components/Header";
+import DescriptionPage from "./pages/Description";
+import ActuPage from "./pages/Actus.js";
 import Inscription from "./components/inscription";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer.js";
 import AccueilPage from "./pages/Accueil.js";
 import ContactPage from "./pages/Contact.js";
-import EntreprisesPage from "./pages/Entreprises.js";
 
 import "./App.css";
 import "./font-awesome-4.7.0/css/font-awesome.min.css";
 import FormationPage from "./pages/Formation";
+import EntreprisesPage from "./pages/Entreprises";
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
           <Route path="actus" element={<ActuPage />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="inscription" element={<Inscription />} />
-          <Route path="entreprises" eLement={<EntreprisesPage/>} />
+          <Route path="entreprises" element={<EntreprisesPage />} />
         </Routes>
       </BrowserRouter>
       <Footer />
