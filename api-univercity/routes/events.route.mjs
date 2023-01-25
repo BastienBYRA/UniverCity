@@ -12,6 +12,10 @@ export const eventsRoutes = (controller) => {
     controller.showAddEvent(req, res);
   });
 
+  router.get("/get/:id", (req, res) => {
+    controller.getOne(req, res);
+  });
+
   router.post("/add", (req, res) => {
     controller.createEvent(req, res);
   });

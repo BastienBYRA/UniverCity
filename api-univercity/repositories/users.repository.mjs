@@ -3,22 +3,25 @@ import { User } from "../config/users.config.db.mjs";
 export class MongoUsersRepository {
   getAll() {
     return new Promise((resolve, reject) => {
-      User.aggregate([
-        {
-          $lookup: {
-            from: "subjects",
-            localField: "subjects",
-            foreignField: "_id",
-            as: "subjects"
+      User.aggregate(
+        [
+          {
+            $lookup: {
+              from: "subjects",
+              localField: "subjects",
+              foreignField: "_id",
+              as: "subjects",
+            },
+          },
+        ],
+        (err, users) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(users.map((user) => user));
           }
         }
-      ], (err, users) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(users.map((user) =>  user));
-        }
-      })
+      );
     });
   }
 
@@ -34,9 +37,9 @@ export class MongoUsersRepository {
     });
   }
 
-  create(email, lastName, firstName, login, password, mobile, INE, subjects) {
+  checkLogin(email) {
     return new Promise((resolve, reject) => {
-      User.create({ email, lastName, firstName, login, password, mobile, INE, subjects }, (err, user) => {
+      User.findOne({ email }, (err, user) => {
         if (err) {
           reject(err);
         } else {
@@ -46,13 +49,52 @@ export class MongoUsersRepository {
     });
   }
 
-  update(id, email, lastName, firstName, login, password, mobile, INE, subjects) {
+  create(email, lastName, firstName, password, mobile, INE, subjects) {
     return new Promise((resolve, reject) => {
-      User.updateOne({ _id: id }, { email, lastName, firstName, login, password, mobile, INE, subjects }, (err) => {
-        if (err) {
-          reject(err);
+      User.findOne({ email: email }, (err, user) => {
+        if (user) {
+          reject("This email is already used.");
         } else {
-          resolve();
+          User.create(
+            {
+              email,
+              lastName,
+              firstName,
+              password,
+              mobile,
+              INE,
+              subjects,
+            },
+            (err, user) => {
+              if (err) {
+                reject(err);
+              } else {
+                resolve(user.toObject());
+              }
+            }
+          );
+        }
+      });
+    });
+  }
+
+  update(id, email, lastName, firstName, password, mobile, INE, subjects) {
+    return new Promise((resolve, reject) => {
+      User.find({ email: email, '_id': {$ne : id}}, (err, user) => {
+        if (user[0] != null) {
+          reject("This email is already used.");
+        } else {
+          User.updateOne(
+            { _id: id },
+            { email, lastName, firstName, password, mobile, INE, subjects },
+            (err, user) => {
+              if (err) {
+                reject(err);
+              } else {
+                resolve();
+              }
+            }
+          );
         }
       });
     });
