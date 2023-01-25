@@ -1,9 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import Banner from "../components/Banner";
-import Header from "../components/Header";
-import TitleWithSubtext from "../components/TitleWithSubtext";
-import descData from "../data/descriptionPageContent.json";
 
 class AccueilPage extends React.Component {
     constructor(props) {
