@@ -3,6 +3,7 @@ import Header from './components/Header';
 import CampusHead from './components/campus.js';
 import DescriptionPage from './pages/Description';
 import ActuPage from './pages/Actus.js';
+import Inscription from "./components/inscription";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer.js";
@@ -22,6 +23,7 @@ function App() {
           <Route path="description" element={<DescriptionPage />} />
           <Route path="actus" element={<ActuPage />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="inscription" element={<Inscription />} />
         </Routes>
       </BrowserRouter>
       <Footer />
