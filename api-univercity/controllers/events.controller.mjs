@@ -6,11 +6,9 @@ export class EventsController {
     }
   
     showHome(req, res) {
-      console.log('CONTROLLER');
       this.repository
         .getAll()
         .then((events) => {
-          console.log(events);
           res.render("home", { events });
         })
         .catch((err) => {
@@ -24,9 +22,7 @@ export class EventsController {
     }
 
     createEvent(req, res) {
-      const { name, description, dateBegin, dateEnd } = req.body;
-    
-      console.log(req.body);
+      const { name, description, dateBegin, dateEnd } = req.body
       this.repository
         .create(name, description, dateBegin, dateEnd)
         .then(() => {
@@ -51,7 +47,6 @@ export class EventsController {
   
     modifyEvent(req, res) {
       const { name, description, dateBegin, dateEnd } = req.body;
-      console.log('DAAAAAAATTTTTTEEEEEE', dateBegin)
       const id = req.params.id;
   
       this.repository
@@ -66,6 +61,7 @@ export class EventsController {
   
     deleteEvent(req, res) {
       const id = req.params.id;
+      console.log('del', id)
       this.repository
         .deleteOne(id)
         .then(() => {
