@@ -22,7 +22,7 @@ class FormationPage extends React.Component {
                 <CardWithDesc
                   title={formation.title}
                   img={formation.img}
-                  desc={formation.desc}
+                  desc={formation.descShort}
                 />
               );
             })}
