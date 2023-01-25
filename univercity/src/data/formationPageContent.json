@@ -3,24 +3,27 @@
         "_id": "1",
         "title": "Informatique",
         "img": "https://asset.lemde.fr/prd-blogs/2020/07/48b7729e-ezgif.com-webp-to-jpg.jpg",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam finibus, tortor nec imperdiet semper, augue metus pretium nibh, quis euismod ante nibh sit amet nunc. Nam posuere urna nec sem molestie, tempor maximus ante dignissim. Ut pharetra condimentum diam nec mollis. Sed eleifend velit arcu, a gravida nibh ultrices non. Duis malesuada sodales elit.",
-        "duration": "1800h",
+        "desc": "Notre formation en informatique de niveau BAC + 4 est conçue pour fournir aux étudiants les compétences et les connaissances nécessaires pour réussir dans le domaine de l'informatique. La formation dure 1500 heures et est conçue pour donner aux étudiants une solide base en programmation, en systèmes d'exploitation, en réseaux informatiques, en bases de données et en intelligence artificielle. Les étudiants apprendront à utiliser les dernières technologies pour créer des applications et des systèmes informatiques efficaces et fiables. Ils auront également l'occasion de mettre en pratique leurs compétences en travaillant sur des projets en groupe et en réalisant des stages professionnels. Cette formation est conçue pour préparer les étudiants à des carrières dans les domaines de développement de logiciels, de l'administration de systèmes, de la sécurité informatique et de l'analyse de données.",
+        "descShort": "Formation en informatique de BAC+4, 1500h, conçue pour donner aux étudiants une solide base en programmation, en systèmes d'exploitation, en réseaux informatiques, en bases de données et en intelligence artificielle.",
+        "duration": "1500h",
         "niveau": "BAC + 4"
     },
     {
         "_id": "2",
         "title": "Mécanique",
         "img": "https://www.iut-brest.fr/wp-content/uploads/2019/08/IUT-BREST_GMP-4-1200x801.jpg",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam finibus, tortor nec imperdiet semper, augue metus pretium nibh, quis euismod ante nibh sit amet nunc. Nam posuere urna nec sem molestie, tempor maximus ante dignissim. Ut pharetra condimentum diam nec mollis. Sed eleifend velit arcu, a gravida nibh ultrices non. Duis malesuada sodales elit.",
-        "duration": "1650h",
-        "niveau": "BAC + 5"
+        "desc": "Notre formation en mécanique de niveau BAC + 4 est conçue pour fournir aux étudiants les compétences et les connaissances nécessaires pour réussir dans le domaine de la mécanique. La formation dure 1450 heures et est conçue pour donner aux étudiants une solide base en mécanique des solides, en thermodynamique, en mécanique des fluides, en mécanique des matériaux et en mécanique des vibrations. Les étudiants apprendront à utiliser les dernières technologies pour créer des machines et des systèmes mécaniques efficaces et fiables. Ils auront également l'occasion de mettre en pratique leurs compétences en travaillant sur des projets en groupe et en réalisant des stages professionnels. Cette formation est conçue pour préparer les étudiants à des carrières dans les domaines de la conception, de la fabrication, de l'installation, de la maintenance et de la réparation de machines et de systèmes mécaniques.",
+        "descShort": "Formation en mécanique de BAC+4, 1450h, conçue pour donner aux étudiants une solide base en mécanique des solides, en thermodynamique, en mécanique des fluides, en mécanique des matériaux et en mécanique des vibrations.",
+        "duration": "1450h",
+        "niveau": "BAC + 4"
     },
     {
         "_id": "3",
         "title": "Biologie",
         "img": "https://master-alfacentre.alfacentre.org/sites/default/files/media/FM/images_ROME/i_rome_K2402.jpg",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam finibus, tortor nec imperdiet semper, augue metus pretium nibh, quis euismod ante nibh sit amet nunc. Nam posuere urna nec sem molestie, tempor maximus ante dignissim. Ut pharetra condimentum diam nec mollis. Sed eleifend velit arcu, a gravida nibh ultrices non. Duis malesuada sodales elit.",
-        "duration": "2000h",
+        "desc": "Notre formation en biologie de niveau BAC + 5 est conçue pour fournir aux étudiants les compétences et les connaissances nécessaires pour réussir dans le domaine de la biologie. La formation dure 1700 heures et est conçue pour donner aux étudiants une solide base en biologie cellulaire, en biochimie, en biologie moléculaire, en biologie écologique et en biologie de l'évolution. Les étudiants apprendront à utiliser les dernières technologies pour étudier les organismes vivants et leur environnement. Ils auront également l'occasion de mettre en pratique leurs compétences en travaillant sur des projets en groupe et en réalisant des stages professionnels. Cette formation est conçue pour préparer les étudiants à des carrières dans les domaines de la recherche scientifique, de la conservation de la biodiversité, de la médecine, de la biotechnologie et de l'agriculture.",
+        "descShort": "Formation en informatique de BAC+4, 1500h, conçue pour donner aux étudiants une solide base en biologie cellulaire, en biochimie, en biologie moléculaire, en biologie écologique et en biologie de l'évolution.",
+        "duration": "1700h",
         "niveau": "BAC + 5"
     }
 ]
