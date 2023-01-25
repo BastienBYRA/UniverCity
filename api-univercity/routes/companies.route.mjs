@@ -4,7 +4,6 @@ export const companiesRoutes = (controller) => {
   const router = Router();
 
   router.get("/", (req, res) => {
-    console.log('ROUTE');
     controller.listCompanies(req, res);
   });
 
@@ -22,7 +21,7 @@ export const companiesRoutes = (controller) => {
 
   router.get("/edit/:id", (req, res) => {
     controller.showEditCompanie(req, res);
-  }); 
+  });
 
   router.post("/edit/:id", (req, res) => {
     controller.modifyCompanie(req, res);
@@ -31,7 +30,6 @@ export const companiesRoutes = (controller) => {
   router.post("/delete/:id", (req, res) => {
     controller.deleteCompanie(req, res);
   });
-  
+
   return router;
 };
-

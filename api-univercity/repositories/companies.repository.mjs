@@ -27,13 +27,16 @@ export class MongoCompaniesRepository {
 
   create(name, description, image, siteLink) {
     return new Promise((resolve, reject) => {
-      Companies.create({ name, description, image, siteLink }, (err, companie) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(companie.toObject());
+      Companies.create(
+        { name, description, image, siteLink },
+        (err, companie) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(companie.toObject());
+          }
         }
-      });
+      );
     });
   }
 

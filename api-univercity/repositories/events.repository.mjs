@@ -26,15 +26,18 @@ export class MongoEventsRepository {
   }
 
   create(title, description, image, dateBegin, dateEnd) {
-    let dateCreation = new Date().toISOString().split('T')[0];
+    let dateCreation = new Date().toISOString().split("T")[0];
     return new Promise((resolve, reject) => {
-      Events.create({ title, description, image, dateCreation, dateBegin, dateEnd }, (err, event) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(event.toObject());
+      Events.create(
+        { title, description, image, dateCreation, dateBegin, dateEnd },
+        (err, event) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(event.toObject());
+          }
         }
-      });
+      );
     });
   }
 

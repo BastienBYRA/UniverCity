@@ -19,11 +19,11 @@ export class MongoFormationsRepository {
         if (err) {
           reject(err);
         } else {
-          if(formation) {
+          if (formation) {
             resolve(formation.toObject());
           } else {
             reject();
-          } 
+          }
         }
       });
     });
@@ -31,13 +31,16 @@ export class MongoFormationsRepository {
 
   create(title, img, desc, descShort, duration, niveau, numMaxPersons) {
     return new Promise((resolve, reject) => {
-      Formations.create({ title, img, desc, descShort, duration, niveau, numMaxPersons }, (err, formation) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(formation.toObject());
+      Formations.create(
+        { title, img, desc, descShort, duration, niveau, numMaxPersons },
+        (err, formation) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(formation.toObject());
+          }
         }
-      });
+      );
     });
   }
 

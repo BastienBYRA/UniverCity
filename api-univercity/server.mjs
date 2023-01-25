@@ -23,11 +23,11 @@ import { companiesRoutes } from "./routes/companies.route.mjs";
 import {CompaniesController } from "./controllers/companies.controller.mjs";
 import { MongoCompaniesRepository } from "./repositories/companies.repository.mjs";
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:3001", // TODO Mettre à jour le port pour la prod
+    origin: "http://localhost:3000", // TODO Mettre à jour le port pour la prod
   })
 );
 
@@ -64,7 +64,6 @@ app.use("/api/events", eventsRoutes(eventsController));
 app.use("/api/formations", formationsRoutes(formationsController));
 app.use("/api/subjects", subjectsRoutes(subjectsController));
 app.use("/api/companies", companiesRoutes(companiesController));
-
 
 mongoose.set("strictQuery", false);
 mongoose.connect("mongodb://localhost:27017/univercity", (error) => {

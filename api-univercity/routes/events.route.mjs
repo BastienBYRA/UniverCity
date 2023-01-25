@@ -4,7 +4,6 @@ export const eventsRoutes = (controller) => {
   const router = Router();
 
   router.get("/", (req, res) => {
-    console.log('ROUTE');
     controller.showHome(req, res);
   });
 
@@ -22,7 +21,7 @@ export const eventsRoutes = (controller) => {
 
   router.get("/edit/:id", (req, res) => {
     controller.showEditEvent(req, res);
-  }); 
+  });
 
   router.post("/edit/:id", (req, res) => {
     controller.modifyEvent(req, res);
@@ -31,7 +30,6 @@ export const eventsRoutes = (controller) => {
   router.post("/delete/:id", (req, res) => {
     controller.deleteEvent(req, res);
   });
-  
+
   return router;
 };
-

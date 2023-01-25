@@ -5,7 +5,6 @@ export const usersRoutes = (controller) => {
 
   router.get("/", (req, res) => {
     controller.listUsers(req, res);
-    
   });
 
   router.get("/add", (req, res) => {
@@ -22,7 +21,7 @@ export const usersRoutes = (controller) => {
 
   router.get("/edit/:id", (req, res) => {
     controller.showEditUser(req, res);
-  }); 
+  });
 
   router.post("/edit/:id", (req, res) => {
     controller.modifyUser(req, res);
@@ -38,4 +37,3 @@ export const usersRoutes = (controller) => {
 
   return router;
 };
-
