@@ -11,10 +11,10 @@ class TitleWithSubtextandImage extends React.Component {
     return (
       <div className="group rounded-lg shadow-lg hover:shadow-2xl duration-300 hover:scale-105">
         <h2 className="font-medium text-2xl text mb-1 text-[#CC0066]">{this.title}</h2>
-        <img
+        {/* <img
             className="rounded-t-lg aspect-video object-fill"
             src={this.image}
-        />
+        /> */}
         <p className="group-hover:text-[#CC0066] text-center my-4 text-lg">{this.description}</p>                     
       </div>
     );
