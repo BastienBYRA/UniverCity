@@ -30,7 +30,7 @@ class Header extends React.Component {
                                     aria-current="page">Enseignants</a>
                             </li>
                             <li>
-                                <a href="#"
+                                <a href="/actus"
                                     className="block py-2 pl-3 text-[#636363] hover:text-[#CC0066] no-underline text-base uppercase"
                                     aria-current="page">Actualités</a>
                             </li>
