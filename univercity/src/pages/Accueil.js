@@ -27,7 +27,7 @@ class AccueilPage extends React.Component {
                                 les conditions de vie dans la ville et avoir des possibilités de
                                 travailler dans la ville après les études.
                             </p>
-                            <a href="/campus"
+                            <a href="/description"
                                className="text-[#373737] hover:text-[#CC0066] flex items-center justify-center mt-4">
                                 Voir plus
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20" fill="currentColor"
@@ -69,7 +69,7 @@ class AccueilPage extends React.Component {
 
                             <Link
                                 className="flex items-center justify-center mx-auto w-[10%] border border-black py-2 px-6 rounded-md hover:bg-neutral-100 duration-200 hover:text-[#CC0066] hover:border-[#CC0066]"
-                                to="/formations"
+                                to="/formation"
                             >
                                 Voir plus
                             </Link>

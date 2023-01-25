@@ -90,7 +90,7 @@ function Inscription() {
                                     px-3 py-2 border border-gray-300
                                     placeholder-gray-500 rounded-md
                                     focus:outline-none focus:border-2 focus:border-[#CC0066]
-                                    focus:border-[#CC0066] focus:z-10"
+                                    focus:z-10"
                             placeholder="Nom"
                         />
                         <input
@@ -102,7 +102,7 @@ function Inscription() {
                                     px-3 py-2 border border-gray-300
                                     placeholder-gray-500 rounded-md
                                     focus:outline-none focus:border-2 focus:border-[#CC0066]
-                                    focus:border-[#CC0066] focus:z-10"
+                                    focus:z-10"
                             placeholder="Prenom"
                         />
                     </div>
@@ -116,7 +116,7 @@ function Inscription() {
                                     px-3 py-2 border border-gray-300
                                     placeholder-gray-500 rounded-md
                                     focus:outline-none focus:border-2 focus:border-[#CC0066]
-                                    focus:border-[#CC0066] focus:z-10"
+                                    focus:z-10"
                             placeholder="Login"
                         />
                         <input
@@ -128,7 +128,7 @@ function Inscription() {
                                     px-3 py-2 border border-gray-300
                                     placeholder-gray-500 rounded-md
                                     focus:outline-none focus:border-2 focus:border-[#CC0066]
-                                    focus:border-[#CC0066] focus:z-10"
+                                    focus:z-10"
                             placeholder="Password"
                         />
                     </div>
@@ -142,7 +142,7 @@ function Inscription() {
                                     px-3 py-2 border border-gray-300
                                     placeholder-gray-500 rounded-md
                                     focus:outline-none focus:border-2 focus:border-[#CC0066]
-                                    focus:border-[#CC0066] focus:z-10"
+                                    focus:z-10"
                             placeholder="Email"
                         />
                         <input
@@ -154,7 +154,7 @@ function Inscription() {
                                     px-3 py-2 border border-gray-300
                                     placeholder-gray-500 rounded-md
                                     focus:outline-none focus:border-2 focus:border-[#CC0066]
-                                    focus:border-[#CC0066] focus:z-10"
+                                    focus:z-10"
                             placeholder="Téléphone"
                         />
                     </div>

@@ -53,7 +53,7 @@ function ContactPage() {
             <p className="mb-3">Adresse : Univercity</p>
           </div>
           <form onSubmit={onSubmit}>
-          <div class="relative mb-4">
+          <div className="relative mb-4">
             <input
               placeholder="Email"
               type="email"
@@ -61,10 +61,10 @@ function ContactPage() {
               name="mail"
               value={toSend.mail}
               onChange={handleChange}
-              class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              className="w-full bg-white rounded border border-gray-300 focus:outline-none focus:border-2 focus:border-[#CC0066] text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
           </div>
-          <div class="relative mb-4">
+          <div className="relative mb-4">
             <input
               placeholder="Sujet"
               type="text"
@@ -72,20 +72,23 @@ function ContactPage() {
               name="nom"
               value={toSend.nom}
               onChange={handleChange}
-              class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              className="w-full bg-white rounded border border-gray-300 focus:outline-none focus:border-2 focus:border-[#CC0066] text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
           </div>
-          <div class="relative mb-4">
+          <div className="relative mb-4">
             <textarea
               placeholder="Message"
               id="message"
               name="prenom"
               value={toSend.prenom}
               onChange={handleChange}
-              class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+              className="w-full bg-white rounded border border-gray-300 focus:outline-none focus:border-2 focus:border-[#CC0066] h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
             ></textarea>
           </div>
-          <button type="submit" class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+          <button type="submit" className="group w-28 mx-auto
+                        py-3 text-sm font-medium
+                        rounded-md text-white bg-[#CC0066] hover:bg-[#B8005C]
+                        uppercase">
             Envoyer
           </button>
           </form>
