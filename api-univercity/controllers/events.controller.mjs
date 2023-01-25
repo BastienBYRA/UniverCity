@@ -61,7 +61,6 @@ export class EventsController {
   
     deleteEvent(req, res) {
       const id = req.params.id;
-      console.log('del', id)
       this.repository
         .deleteOne(id)
         .then(() => {

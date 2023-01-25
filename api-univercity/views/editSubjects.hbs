@@ -1,0 +1,28 @@
+{{#if error}}
+  <div class="alert">
+    {{error}}
+  </div>
+{{/if}}
+<div class="card">
+  <div class="card-content">
+  {{#if subject._id}}
+    <form method="POST" action="/api/subjects/edit/{{subject._id}}" novalidate>
+  {{else}}
+    <form method="POST" action="/api/subjects/add" novalidate>
+  {{/if}}
+      <div class="field">
+        <div class="control">
+          <input class="input" name="name" placeholder='name' value="{{subject.name}}">
+        </div>
+      </div>
+      <div class="content">
+        <a class="button" href="/api/events">
+          Cancel
+        </a>
+        <button class="button" type="submit">
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -2,12 +2,12 @@
   <h1>ALed</h1>
 </div>
 
-<button><a href="/api/formations/add">Add form</a></button>
+<button><a href="/api/subjects/add">Add subject</a></button>
 <ul>
-  {{#each formations}}
+  {{#each subjects}}
     <li>
-      <button><a href="/api/formations/edit/{{this._id}}">Editer</a></button>
-      <form action="/api/formations/delete/{{this._id}}"
+      <button><a href="/api/subjects/edit/{{this._id}}">Editer</a></button>
+      <form action="/api/subjects/delete/{{this._id}}"
             method="POST"
             onSubmit="if(!confirm('Voulez vous vraiment supprimer cet event ?')){return false;}">
              <button type="submit">
@@ -15,11 +15,6 @@
              </button>
            </form>
       <p>Nom : {{this.name}}</p>
-      <p>description : {{this.description}}</p>
-      <p>duration : {{this.duration}}</p>
-      <p>année + : {{this.eduLevelAfter}}</p>
-      <p>numMAxPersons : {{this.numMAxPersons}}</p>
-      <p>image : {{this.image}}</p>
     </li>
   {{/each}}
 </ul>
