@@ -21,18 +21,23 @@ class Header extends React.Component {
                             </li>
                             <li>
                                 <a href="#"
-                                   className="block py-2 pl-3 text-[#636363] hover:text-[#CC0066] no-underline text-base uppercase"
+                                    className="block py-2 pl-3 text-[#636363] hover:text-[#CC0066] no-underline text-base uppercase"
                                     aria-current="page">Formations</a>
                             </li>
                             <li>
                                 <a href="#"
-                                   className="block py-2 pl-3 text-[#636363] hover:text-[#CC0066] no-underline text-base uppercase"
+                                    className="block py-2 pl-3 text-[#636363] hover:text-[#CC0066] no-underline text-base uppercase"
                                     aria-current="page">Enseignants</a>
                             </li>
                             <li>
                                 <a href="#"
-                                   className="block py-2 pl-3 text-[#636363] hover:text-[#CC0066] no-underline text-base uppercase"
+                                    className="block py-2 pl-3 text-[#636363] hover:text-[#CC0066] no-underline text-base uppercase"
                                     aria-current="page">Actualités</a>
+                            </li>
+                            <li>
+                                <a href="/contact"
+                                    className="block py-2 pl-3 text-[#636363] hover:text-[#CC0066] no-underline text-base uppercase"
+                                    aria-current="page"><p>Contact</p></a>
                             </li>
                         </ul>
                     </div>

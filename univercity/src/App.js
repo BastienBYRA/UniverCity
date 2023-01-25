@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer.js";
 import AccueilPage from "./pages/Accueil.js";
+import ContactPage from "./pages/Contact.js";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<AccueilPage />} />
           <Route path="description" element={<DescriptionPage />} />
+          <Route path="contact" element={<ContactPage />} />
         </Routes>
       </BrowserRouter>
       <Footer />
