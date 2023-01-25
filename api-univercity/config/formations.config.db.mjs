@@ -14,4 +14,4 @@ const formationsSchema = mongoose.Schema(
     }
   );
 
-export const Formations = mongoose.model("Formations", formationsSchema, 'univercity');
+export const Formations = mongoose.model("Formations", formationsSchema);

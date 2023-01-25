@@ -18,7 +18,7 @@ export class SubjectsController {
     }
 
     showAddSubject(req, res) {
-      res.render("edit", { subject: {} });
+      res.render("editSubject", { subject: {} });
     }
 
     createSubject(req, res) {
@@ -40,7 +40,7 @@ export class SubjectsController {
       this.repository
         .getOne(id)
         .then((subject) => {
-          res.render("edit", { subject });
+          res.render("editSubject", { subject });
         })
         .catch((err) => {
           res.render("error", { code: 404, error: err });

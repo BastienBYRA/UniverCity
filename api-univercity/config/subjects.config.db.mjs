@@ -9,4 +9,4 @@ const subjectsSchema = mongoose.Schema(
   }
 );
 
-export const Subjects = mongoose.model("Subjects", subjectsSchema, "univercity");
+export const Subjects = mongoose.model("Subjects", subjectsSchema);

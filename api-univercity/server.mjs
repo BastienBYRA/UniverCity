@@ -40,9 +40,6 @@ app.use(
 app.use(express.json());
 app.use(express.static("assets"));
 
-const usersRepository = new MongoUsersRepository();
-const usersController = new UsersController(usersRepository);
-
 const eventsRepository = new MongoEventsRepository();
 const eventsController = new EventsController(eventsRepository);
 
@@ -51,6 +48,9 @@ const formationsController = new FormationsController(formationsRepository);
 
 const subjectsRepository = new MongoSubjectsRepository();
 const subjectsController = new SubjectsController(subjectsRepository);
+
+const usersRepository = new MongoUsersRepository();
+const usersController = new UsersController(usersRepository, subjectsRepository);
 
 app.use("/api/users", usersRoutes(usersController));
 app.use("/api/events", eventsRoutes(eventsController));
