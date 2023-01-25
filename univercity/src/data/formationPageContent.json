@@ -1,0 +1,26 @@
+[
+    {
+        "_id": "1",
+        "title": "Informatique",
+        "img": "https://asset.lemde.fr/prd-blogs/2020/07/48b7729e-ezgif.com-webp-to-jpg.jpg",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam finibus, tortor nec imperdiet semper, augue metus pretium nibh, quis euismod ante nibh sit amet nunc. Nam posuere urna nec sem molestie, tempor maximus ante dignissim. Ut pharetra condimentum diam nec mollis. Sed eleifend velit arcu, a gravida nibh ultrices non. Duis malesuada sodales elit.",
+        "duration": "1800h",
+        "niveau": "BAC + 4"
+    },
+    {
+        "_id": "2",
+        "title": "Mécanique",
+        "img": "https://www.iut-brest.fr/wp-content/uploads/2019/08/IUT-BREST_GMP-4-1200x801.jpg",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam finibus, tortor nec imperdiet semper, augue metus pretium nibh, quis euismod ante nibh sit amet nunc. Nam posuere urna nec sem molestie, tempor maximus ante dignissim. Ut pharetra condimentum diam nec mollis. Sed eleifend velit arcu, a gravida nibh ultrices non. Duis malesuada sodales elit.",
+        "duration": "1650h",
+        "niveau": "BAC + 5"
+    },
+    {
+        "_id": "3",
+        "title": "Biologie",
+        "img": "https://master-alfacentre.alfacentre.org/sites/default/files/media/FM/images_ROME/i_rome_K2402.jpg",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam finibus, tortor nec imperdiet semper, augue metus pretium nibh, quis euismod ante nibh sit amet nunc. Nam posuere urna nec sem molestie, tempor maximus ante dignissim. Ut pharetra condimentum diam nec mollis. Sed eleifend velit arcu, a gravida nibh ultrices non. Duis malesuada sodales elit.",
+        "duration": "2000h",
+        "niveau": "BAC + 5"
+    }
+]

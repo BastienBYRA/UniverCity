@@ -20,7 +20,7 @@ class Header extends React.Component {
                                     aria-current="page"><p>Description</p></a>
                             </li>
                             <li>
-                                <a href="#"
+                                <a href="/formations"
                                     className="block py-2 pl-3 text-[#636363] hover:text-[#CC0066] no-underline text-base uppercase"
                                     aria-current="page">Formations</a>
                             </li>
