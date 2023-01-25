@@ -1,4 +1,4 @@
-export class FormationsController {
+export class SubjectsController {
     repository;
   
     constructor(repository) {
@@ -8,8 +8,8 @@ export class FormationsController {
     showHome(req, res) {
       this.repository
         .getAll()
-        .then((formations) => {
-          res.render("home", { formations });
+        .then((subjects) => {
+          res.render("home", { subjects });
         })
         .catch((err) => {
           console.log("showHome error", err);
@@ -17,59 +17,56 @@ export class FormationsController {
         });
     }
 
-    showAddFormation(req, res) {
-      res.render("edit", { formation: {} });
+    showAddSubject(req, res) {
+      res.render("edit", { subject: {} });
     }
 
-    createFormation(req, res) {
-      console.log('HHHHHHHHHHHHHHHHAAAAAAAAAAAAAAAAAAAAA');
-      
-      const { name, duration, description, eduLevelAfter, numMAxPersons, image } = req.body
+    createSubject(req, res) {
+      const { name } = req.body
       this.repository
-        .create(name, duration, description, eduLevelAfter, numMAxPersons, image)
+        .create(name)
         .then(() => {
-          res.redirect("/api/formations");
+          res.redirect("/api/subjects");
         })
         .catch((err) => {
-          console.log("createFormation error", err);
+          console.log("createsubject error", err);
           
           res.render("error", { code: 500, error: err });
         });
     }
 
-    showEditFormation(req, res) {
+    showEditSubject(req, res) {
       const id = req.params.id;
       this.repository
         .getOne(id)
-        .then((formation) => {
-          res.render("edit", { formation });
+        .then((subject) => {
+          res.render("edit", { subject });
         })
         .catch((err) => {
           res.render("error", { code: 404, error: err });
         });
     }
   
-    modifyFormation(req, res) {
-      const { name, duration, description, eduLevelAfter, numMAxPersons, image } = req.body;
+    modifySubject(req, res) {
+      const { name } = req.body;
       const id = req.params.id;
   
       this.repository
-        .update(id, name, duration, description, eduLevelAfter, numMAxPersons, image)
+        .update(id, name)
         .then(() => {
-          res.redirect("/api/formations");
+          res.redirect("/api/subjects");
         })
         .catch((err) => {
-          console.log("createFormation error", err);
           res.render("error", { code: 500, error: err });
         });
     }
   
-    deleteFormation(req, res) {
+    deleteSubject(req, res) {
       const id = req.params.id;
       this.repository
         .deleteOne(id)
         .then(() => {
-          res.redirect("/api/formations");
+          res.redirect("/api/subjects");
         })
         .catch((err) => {
           res.render("error", { code: 404, error: err });

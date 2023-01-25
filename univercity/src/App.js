@@ -12,6 +12,7 @@ import './App.css';
 
 function App() {
   return (
+<<<<<<< HEAD
     <div>
         <Header />
         <BrowserRouter>
@@ -21,6 +22,17 @@ function App() {
                 <Route path="actus" element={<ActuPage />} />
             </Routes>
         </BrowserRouter>
+=======
+    <div className="App bg-[#F1F1F0]">
+      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<AccueilPage />} />
+          <Route path="description" element={<DescriptionPage />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
+>>>>>>> e78ec0bfa9aea7568db667bd94248145b4563e5d
     </div>
   );
 };
