@@ -46,7 +46,7 @@ class Header extends React.Component {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/actus"
                     className="block py-2 pl-3 text-gray-200 hover:text-rose-400 no-underline text-base"
                     aria-current="page"
                   >

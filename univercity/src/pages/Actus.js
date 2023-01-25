@@ -9,10 +9,10 @@ class ActuPage extends React.Component {
 
     render() {
         return (
-        <div className="mx-24 mb-12">
-            <h1 className="text-center text-2xl font-bold my-12 underline">Les news à UniverCity</h1>
+        <div className="mx-36 mb-12">
+            <h1 className="text-center text-5xl font-bold">Les news à UniverCity</h1>
 
-            <div>
+            <div className="xl:mr-64 mt-12">
                 {actuData && actuData.map((data) => {
                     return (
                         <TitleWithSubtext 
