@@ -10,7 +10,7 @@ class DescriptionPage extends React.Component {
   render() {
     return (
       <div className="mx-36 my-12">
-        <h1 className="text-center text-5xl font-bold">
+        <h1 className="text-center text-3xl text-[#15191D] font-bold">
           Le Campus de UniverCity
         </h1>
 
