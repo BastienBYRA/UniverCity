@@ -8,12 +8,12 @@ class EntreprisesPage extends React.Component {
         super(props);
     }
 
-    render() {
-        return (
-            <div className="mx-36 my-12">
-                <h1 className="text-center text-3xl text-[#15191D] font-bold">
-                    Entreprise, coopérons et créons un nouveau monde
-                </h1>
+  render() {
+    return (
+      <div className="mx-36 my-12">
+        <h1 className="text-center text-3xl text-[#15191D] font-bold">
+          Entreprise, coopérons et créons un nouveau monde
+        </h1>
 
                 <div className="xl:mr-64 mt-12">
                     <h1 className="text-center text-3xl text">
