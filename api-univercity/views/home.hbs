@@ -7,7 +7,15 @@
   {{#each events}}
     <li>
       <button><a href="/api/events/edit/{{this._id}}">Editer</a></button>
+      <form action="/api/events/delete/{{this._id}}"
+            method="POST"
+            onSubmit="if(!confirm('Voulez vous vraiment supprimer cet event ?')){return false;}">
+             <button type="submit">
+               Delete
+             </button>
+           </form>
       <p>Nom : {{this.name}}</p>
+      <p>Date creation : {{this.dateCreation}}</p>
       <p>date Debut : {{this.dateBegin}}</p>
       <p>date fin : {{this.dateEnd}}</p>
       <p>description : {{this.description}}</p>

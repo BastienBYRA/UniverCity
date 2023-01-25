@@ -3,9 +3,9 @@ import { mongoose } from "mongoose";
   const eventsSchema = mongoose.Schema(
     {
       name: String,
-      dateCreation: Date,
-      dateBegin: Date,
-      dateEnd: Date,
+      dateCreation: String,
+      dateBegin: String,
+      dateEnd: String,
       description: String
     },
     {

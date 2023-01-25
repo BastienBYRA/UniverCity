@@ -2,7 +2,6 @@ import { Events } from "../config/events.config.db.mjs";
 
 export class MongoEventsRepository {
   getAll() {
-    console.log("REPOSITORY");
     return new Promise((resolve, reject) => {
       Events.find((err, users) => {
         if (err) {
@@ -27,8 +26,10 @@ export class MongoEventsRepository {
   }
 
   create(name, description, dateBegin, dateEnd) {
+    let dateCreation = new Date().toISOString().split('T')[0];
+    console.log(dateCreation);
     return new Promise((resolve, reject) => {
-      Events.create({ name, description, dateBegin, dateEnd }, (err, event) => {
+      Events.create({ name, description, dateCreation, dateBegin, dateEnd }, (err, event) => {
         if (err) {
           reject(err);
         } else {
@@ -39,6 +40,8 @@ export class MongoEventsRepository {
   }
 
   update(id, name, description, dateBegin, dateEnd) {
+    
+
     return new Promise((resolve, reject) => {
       Events.updateOne(
         { _id: id },
