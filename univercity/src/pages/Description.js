@@ -10,7 +10,7 @@ class DescriptionPage extends React.Component {
     render() {
         return (
         <div className="mx-24 mb-12">
-            <h1 className="text-center text-2xl font-bold my-12 underline">Le Campus de UniverCity</h1>
+            <h1 className="text-center text-3xl font-bold text-rose-500">Le Campus de UniverCity</h1>
 
             <div>
                 {descData && descData.map((data) => {
