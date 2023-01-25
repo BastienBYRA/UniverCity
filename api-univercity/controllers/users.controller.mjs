@@ -1,3 +1,6 @@
+import bcrypt from "bcrypt";
+import { User } from "../config/users.config.db.mjs";
+
 export class UsersController {
   usersRepository;
   subjectsRepository;
@@ -7,20 +10,31 @@ export class UsersController {
     this.subjectsRepository = subjectsRepository;
   }
 
-  showHome(req, res) {
+  listUsers(req, res) {
     this.usersRepository
       .getAll()
       .then((users) => {
-        res.render("home", { users });
+        res.send({ code: 200, users });
       })
       .catch((err) => {
         res.sendStatus(500);
       });
   }
 
+  getOne(req, res) {
+    let id = req.params.id;
+    this.repository.getOne(id)
+    .then((formation) => {
+      res.send({code:200, formation});
+    })
+    .catch((err) => {
+      res.sendStatus(500);
+    });
+  }
+
   showAddUser(req, res) {
     this.subjectsRepository.getAll().then((subjectsForUser) => {
-      res.render("edit", { user: {}, subjectsForUser });
+      res.render("editUser", { user: {}, subjectsForUser });
     });
   }
 
@@ -29,30 +43,56 @@ export class UsersController {
       email,
       lastName,
       firstName,
-      login,
       password,
       mobile,
       INE,
       subjects,
     } = req.body;
+
+    bcrypt.genSalt(10, (err, salt) => {
+      bcrypt.hash(password, salt).then((hash) => {
+        this.usersRepository
+          .create(
+            email,
+            lastName,
+            firstName,
+            hash,
+            mobile,
+            INE,
+            subjects
+          )
+          .then((user) => {
+            res.send({ user });
+          })
+          .catch((err) => {
+            res.send({code:500, msg:err});
+          });
+      });
+    });
+  }
+
+  /**
+   * Permet de retourner l'utilisateur en fonction des ses login et mot de passe
+   * @param {Requete html} req
+   * @param {Réponse html} res
+   */
+  logUser(req, res) {
+    const { email, password } = req.body;
+    console.log(email, password);
+    
     this.usersRepository
-      .create(
-        email,
-        lastName,
-        firstName,
-        login,
-        password,
-        mobile,
-        INE,
-        subjects
-      )
-      .then(() => {
-        res.redirect("/api/users");
+      .checkLogin(email, password)
+      .then((user) => {
+        bcrypt.compare(password, user.password, function (err, result) {
+          if (result) {
+            res.send({ code: 200, user });
+          } else {
+            res.send({ msg: "Login ou mot de passe incorrect" });
+          }
+        });
       })
       .catch((err) => {
-        console.log("createuser error", err);
-
-        res.render("error", { code: 500, error: err });
+        res.sendStatus(500);
       });
   }
 
@@ -68,7 +108,7 @@ export class UsersController {
         this.usersRepository
           .getOne(id)
           .then((user) => {
-            res.render("edit", { user, subjectsForUser });
+            res.render("editUser", { user, subjectsForUser });
           })
           .catch((err) => {
             res.render("error", { code: 404, error: err });
@@ -82,8 +122,6 @@ export class UsersController {
       email,
       lastName,
       firstName,
-      login,
-      password,
       mobile,
       INE,
       subjects,
@@ -96,18 +134,17 @@ export class UsersController {
         email,
         lastName,
         firstName,
-        login,
-        password,
         mobile,
         INE,
         subjects
       )
-      .then(() => {
-        res.redirect("/api/users");
+      .then((user) => {
+        console.log(user);
+        
+        res.send({ code: 200, user });
       })
       .catch((err) => {
-        console.log("createuser error", err);
-        res.render("error", { code: 500, error: err });
+        res.send({code:500, msg:err});
       });
   }
 
@@ -116,10 +153,10 @@ export class UsersController {
     this.usersRepository
       .deleteOne(id)
       .then(() => {
-        res.redirect("/api/users");
+        res.sendStatus(200);
       })
       .catch((err) => {
-        res.render("error", { code: 404, error: err });
+        res.sendStatus(500);
       });
   }
 }
