@@ -5,16 +5,26 @@ export class SubjectsController {
       this.repository = repository;
     }
   
-    showHome(req, res) {
+    listSubjects(req, res) {
       this.repository
         .getAll()
         .then((subjects) => {
-          res.render("home", { subjects });
+          res.send({code:200, subjects });
         })
         .catch((err) => {
-          console.log("showHome error", err);
           res.sendStatus(500);
         });
+    }
+
+    getOne(req, res) {
+      let id = req.params.id;
+      this.repository.getOne(id)
+      .then((subject) => {
+        res.send({code:200, subject});
+      })
+      .catch((err) => {
+        res.sendStatus(500);
+      });
     }
 
     showAddSubject(req, res) {
@@ -25,12 +35,10 @@ export class SubjectsController {
       const { name } = req.body
       this.repository
         .create(name)
-        .then(() => {
-          res.redirect("/api/subjects");
+        .then((subject) => {
+          res.send({ code: 200, subject });
         })
         .catch((err) => {
-          console.log("createsubject error", err);
-          
           res.render("error", { code: 500, error: err });
         });
     }
@@ -53,8 +61,8 @@ export class SubjectsController {
   
       this.repository
         .update(id, name)
-        .then(() => {
-          res.redirect("/api/subjects");
+        .then((subject) => {
+          res.send({ code: 200, subject });
         })
         .catch((err) => {
           res.render("error", { code: 500, error: err });
@@ -66,10 +74,10 @@ export class SubjectsController {
       this.repository
         .deleteOne(id)
         .then(() => {
-          res.redirect("/api/subjects");
+          res.sendStatus(200);
         })
         .catch((err) => {
-          res.render("error", { code: 404, error: err });
+          res.sendStatus(500);
         });
     }
   }

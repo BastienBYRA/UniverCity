@@ -11,6 +11,10 @@ export const formationsRoutes = (controller) => {
     controller.showAddFormation(req, res);
   });
 
+  router.get("/get/:id", (req, res) => {
+    controller.getOne(req, res);
+  });
+
   router.post("/add", (req, res) => {
     controller.createFormation(req, res);
   });

@@ -9,31 +9,37 @@ export class FormationsController {
       this.repository
         .getAll()
         .then((formations) => {
-          res.render("home", { formations });
+          res.send({code:200, formations});
         })
         .catch((err) => {
-          console.log("showHome error", err);
           res.sendStatus(500);
         });
     }
 
+    getOne(req, res) {
+      let id = req.params.id;
+      this.repository.getOne(id)
+      .then((formation) => {
+        res.send({code:200, formation});
+      })
+      .catch((err) => {
+        res.sendStatus(500);
+      });
+    }
+
     showAddFormation(req, res) {
-      res.render("edit", { formation: {} });
+      res.render("editFormation", { formation: {} });
     }
 
     createFormation(req, res) {
-      console.log('HHHHHHHHHHHHHHHHAAAAAAAAAAAAAAAAAAAAA');
-      
       const { name, duration, description, eduLevelAfter, numMAxPersons, image } = req.body
       this.repository
         .create(name, duration, description, eduLevelAfter, numMAxPersons, image)
-        .then(() => {
-          res.redirect("/api/formations");
+        .then((formation) => {
+          res.send({code:200, formation})
         })
         .catch((err) => {
-          console.log("createFormation error", err);
-          
-          res.render("error", { code: 500, error: err });
+          res.sendStatus(500);
         });
     }
 
@@ -42,10 +48,10 @@ export class FormationsController {
       this.repository
         .getOne(id)
         .then((formation) => {
-          res.render("edit", { formation });
+          res.render("editFormation", { formation });
         })
         .catch((err) => {
-          res.render("error", { code: 404, error: err });
+          res.sendStatus(404);
         });
     }
   
@@ -55,12 +61,11 @@ export class FormationsController {
   
       this.repository
         .update(id, name, duration, description, eduLevelAfter, numMAxPersons, image)
-        .then(() => {
-          res.redirect("/api/formations");
+        .then((formation) => {
+          res.send(code = 200, formation);
         })
         .catch((err) => {
-          console.log("createFormation error", err);
-          res.render("error", { code: 500, error: err });
+          res.sendStatus(500);
         });
     }
   
@@ -69,10 +74,10 @@ export class FormationsController {
       this.repository
         .deleteOne(id)
         .then(() => {
-          res.redirect("/api/formations");
+          res.sendStatus(200);
         })
         .catch((err) => {
-          res.render("error", { code: 404, error: err });
+          res.sendStatus(500);
         });
     }
   }
