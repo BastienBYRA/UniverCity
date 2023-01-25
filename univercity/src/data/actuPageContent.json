@@ -1,14 +1,67 @@
 [
   {
-    "title": "Voici la liste des nouvelles entreprises en collaboration avec nous !",
-    "description": "Avec les nombreuses entreprises déjà présentes sur le site, il était logique que de nouvelles veuillent aussi faire parti de ce complexe pour pouvoir en profiter et trouver de futures possibilités d'amélioration & de développement."
+    "title": "Nouvelles entreprises en collaboration avec nous !",
+    "description": "Nous sommes ravis d'annoncer que de nouvelles entreprises ont rejoint notre complexe pour offrir encore plus de possibilités d'emploi et de développement aux étudiants et aux membres de UniverCity.",
+    "image": "https://www.decision-achats.fr/Assets/Img/MKME/VISUEL/2019/10/343469/reinventer-lentreprise-performante-grace-aux-nouvelles-technologies-LE.jpg"
   },
   {
-    "title": "Mise en place d'un projet de drone de livraison automatique",
-    "description": "Le projet SkyNet a pour but de ne plus avoir besoin de livreur pour nos colis, cela prend du temps à livrer et le temps c'est de l'argent. Donc la livraison par drone est la solution."
+    "title": "Mise en place d'un projet de livraison automatique par drone",
+    "description": "Nous travaillons sur un projet innovant nommé SkyNet qui utilise des drones pour la livraison automatisée de colis. Cela permettra de réduire les délais de livraison et d'optimiser les coûts logistiques puisque nous n'avons plus besoin de livreur pour les petits colis.",
+    "image": "https://d1fmx1rbmqrxrr.cloudfront.net/zdnet/i/edit/ne/2020/01/drone.jpg"
   },
   {
     "title": "CyberTrain est enfin ouvert !",
-    "description": "Le monorail à impulsion électromagnétique est enfin à la disposition des utilisateurs. Sa vitesse lui permettant de franchir l'Univercity en moins de 10 minutes facilitera l'ensemble de vos trajets."
+    "description": "Le monorail à impulsion électromagnétique est enfin à la disposition des utilisateurs. Sa vitesse lui permet de franchir l'UniverCity en moins de 10 minutes ce qui facilitera les déplacements sur le campus.",
+    "image": "https://bibliblog.net/wp-content/uploads/2017/11/shinkansen-768x481.jpg"
+  },
+  {
+    "title": "Ouverture d'un nouveau parc d'attractions futuriste",
+    "description": "Le campus de UniverCity s'agrandit avec l'ouverture d'un nouveau parc d'attractions futuriste offrant des activités ludiques et divertissantes pour les étudiants.",
+    "image": "https://img.parktrips.fr/post/space-mountain-tokyo-disneyland-2027.jpg"
+  },
+  {
+    "title": "Inauguration de nouvelles salles de sports et gymnases",
+    "description": "UniverCity investit dans les infrastructures sportives avec l'ajout de nouvelles salles de sports et gymnases pour une meilleure qualité de vie étudiante.",
+    "image": "https://www.smc2-construction.com/wp-content/uploads/2021/11/SMC2-salles-sports-dynamiques-2.jpg"
+  },
+  {
+    "title": "Mise en place d'un système de points pour les étudiants",
+    "description": "UniverCity lance un système de points pour récompenser les étudiants les plus méritants et leur permettre d'accéder à des avantages exclusifs.",
+    "image": "https://www.letudiant.fr/static/uploads/mediatheque/ETU_ETU/3/1/1156431-argent-main-766x438.jpg"
+  },
+  {
+    "title": "Lancement de projets pour améliorer les conditions de vie dans la ville",
+    "description": "UniverCity s'engage dans des projets pour améliorer les conditions de vie dans la ville, avec la participation active des étudiants.",
+    "image": "https://phrmeseng.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_extra_big/2021/09/28/node_30821/116370/public/2021/09/28/B9728465289Z.1_20210928133840_000%2BGK5J17BVU.1-0.jpg?itok=rLgO9o2i1632829127"
+  },
+  {
+    "title": "Ouverture de nouveaux logements étudiants à prix avantageux",
+    "description": "UniverCity offre de nouvelles possibilités d'hébergement avec l'ouverture de nouveaux logements étudiants à des prix avantageux.",
+    "image": "https://www.greenkub.fr/wp-content/uploads/2019/03/logements-etudiants.jpg"
+  },
+  {
+    "title": "Mise en place de programmes de stages pour les étudiants",
+    "description": "UniverCity offre des opportunités de stages pour les étudiants pour une meilleure préparation à la vie professionnelle.",
+    "image": "https://www.onisep.fr/var/onisep/storage/images/_aliases/article_visuel_660_440/media/images/choisir-mes-etudes/apres-le-bac/etudier-en-europe/partir-en-stage-a-l-etranger/stage-encadre-ou-hors-programme-ce-que-vous-devez-savoir/28566616-1-fre-FR/Stage-encadre-ou-hors-programme-ce-que-vous-devez-savoir.jpg"
+  },
+  {
+    "title": "Inauguration d'une nouvelle bibliothèque universitaire",
+    "description": "UniverCity renforce ses ressources pédagogiques avec l'inauguration d'une nouvelle bibliothèque universaire pour les étudiants et les professeurs.",
+    "image": "https://actualitte.com/uploads/images/Bibliothe_CC_80que_20universitaire_20Edgar_20Morin-22de8a10-530b-44e3-a9e6-b7a4b45a84ef.jpg"
+  },
+  {
+    "title": "Organisation d'événements culturels et sociaux pour les étudiants",
+    "description": "UniverCity organise régulièrement des événements culturels et sociaux pour les étudiants, pour renforcer la vie étudiante et la communauté universitaire.",
+    "image": "https://www.uha.fr/_resource/Vie%20universitaire/Vie%20%C3%A9tudiante/%C3%89v%C3%A9nements%20%C3%A9tudiants/evenements-etudiants_max320x491.png"
+  },
+  {
+    "title": "Mise en place d'un système de transport en commun gratuit pour les étudiants",
+    "description": "UniverCity facilite les déplacements des étudiants avec un système de transport en commun gratuit pour les étudiants.",
+    "image": "https://www.toutsurmesfinances.com/argent/wp-content/uploads/sites/3/2019/04/tramway-rer-paris.jpg"
+  },
+  {
+    "title": "Ouverture de nouveaux commerces et services sur le campus",
+    "description": "UniverCity offre de nouveaux services pour les étudiants avec l'ouverture de nouveaux commerces et services sur le campus, allant des restaurants aux magasins en passant par les services bancaires.",
+    "image": "https://www.capital.fr/imgre/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fcap.2F2018.2F10.2F29.2F190e7be4-0a52-4698-8787-94c66c78ae32.2Ejpeg/768x432/background-color/ffffff/quality/70/ces-nouveaux-petits-commerces-qui-redynamisent-nos-centres-villes-1313810.jpg"
   }
 ]

@@ -4,11 +4,15 @@ export const subjectsRoutes = (controller) => {
   const router = Router();
 
   router.get("/", (req, res) => {
-    controller.showHome(req, res);
+    controller.listSubjects(req, res);
   });
 
   router.get("/add", (req, res) => {
     controller.showAddSubject(req, res);
+  });
+
+  router.get("/get/:id", (req, res) => {
+    controller.getOne(req, res);
   });
 
   router.post("/add", (req, res) => {

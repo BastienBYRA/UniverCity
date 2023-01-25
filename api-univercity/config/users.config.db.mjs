@@ -5,10 +5,10 @@ const usersSchema = mongoose.Schema(
     email: String,
     firstName: String,
     lastName: String,
-    login: String,
     password: String,
     mobile: String,
     INE: String,
+    isAdmin: Boolean,
     subjects: [{ type: mongoose.Schema.Types.ObjectId, ref: "Subjects" }],
   },
   {

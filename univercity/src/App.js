@@ -10,9 +10,9 @@ import AccueilPage from "./pages/Accueil.js";
 import ContactPage from "./pages/Contact.js";
 import EntreprisesPage from "./pages/Entreprises.js";
 
-import './App.css';
-import './font-awesome-4.7.0/css/font-awesome.min.css';
-
+import "./App.css";
+import "./font-awesome-4.7.0/css/font-awesome.min.css";
+import FormationPage from "./pages/Formation";
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<AccueilPage />} />
           <Route path="description" element={<DescriptionPage />} />
+          <Route path="formation" element={<FormationPage />} />
           <Route path="actus" element={<ActuPage />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="inscription" element={<Inscription />} />
