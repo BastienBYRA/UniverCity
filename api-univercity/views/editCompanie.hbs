@@ -1,0 +1,44 @@
+{{#if error}}
+  <div class="alert">
+    {{error}}
+  </div>
+{{/if}}
+<div class="card">
+  <div class="card-content">
+  {{#if companie._id}}
+    <form method="POST" action="/api/companies/edit/{{companie._id}}" novalidate>
+  {{else}}
+    <form method="POST" action="/api/companies/add" novalidate>
+  {{/if}}
+      <div class="field">
+        <div class="control">
+          <input class="input" name="name" placeholder='name' value="{{companie.name}}">
+        </div>
+      </div>
+      <div class="field">
+        <label for="">Description</label>
+        <div class="control">
+          <textarea name="description">{{companie.description}}</textarea>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input name="image" type="url" placeholder="URL image" value="{{companie.image}}">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input class="input" name="siteLink" placeholder='Lien du site' value="{{companie.siteLink}}">
+        </div>
+      </div>
+      <div class="content">
+        <a class="button" href="/api/companies">
+          Cancel
+        </a>
+        <button class="button" type="submit">
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

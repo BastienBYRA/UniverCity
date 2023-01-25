@@ -2,12 +2,13 @@ import { mongoose } from "mongoose";
 
 const formationsSchema = mongoose.Schema(
     {
-      name: String,
+      title: String,
+      img: String,
+      desc: String,
+      descShort: String,
       duration: String,
-      description: String,
-      eduLevelAfter: String,
-      numMAxPersons: Number,
-      image: String
+      niveau: String,
+      numMaxPersons: Number,
     },
     {
       timestamps: true,

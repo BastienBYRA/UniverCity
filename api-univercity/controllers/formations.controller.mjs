@@ -32,9 +32,10 @@ export class FormationsController {
     }
 
     createFormation(req, res) {
-      const { name, duration, description, eduLevelAfter, numMAxPersons, image } = req.body
+      const { title, img, desc, descShort, duration, niveau, numMaxPersons } = req.body
+      
       this.repository
-        .create(name, duration, description, eduLevelAfter, numMAxPersons, image)
+        .create(title, img, desc, descShort, duration, niveau, numMaxPersons)
         .then((formation) => {
           res.send({code:200, formation})
         })
@@ -56,13 +57,13 @@ export class FormationsController {
     }
   
     modifyFormation(req, res) {
-      const { name, duration, description, eduLevelAfter, numMAxPersons, image } = req.body;
+      const { title, img, desc, descShort, duration, niveau, numMaxPersons } = req.body;
       const id = req.params.id;
   
       this.repository
-        .update(id, name, duration, description, eduLevelAfter, numMAxPersons, image)
-        .then((formation) => {
-          res.send(code = 200, formation);
+        .update(id, title, img, desc, descShort, duration, niveau, numMaxPersons)
+        .then(() => {
+          res.sendStatus(200);
         })
         .catch((err) => {
           res.sendStatus(500);

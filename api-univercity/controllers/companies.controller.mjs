@@ -1,43 +1,43 @@
-export class EventsController {
+export class CompaniesController {
     repository;
   
     constructor(repository) {
       this.repository = repository;
     }
   
-    showHome(req, res) {
+    listCompanies(req, res) {
       this.repository
         .getAll()
-        .then((events) => {
-          res.send({code:200, events});
+        .then((companies) => {
+          res.send({code:200, companies});
         })
         .catch((err) => {
           res.sendStatus(500);
         });
     }
 
-    showAddEvent(req, res) {
-      res.render("editEvents", { event: {} });
+    showAddCompanie(req, res) {
+      res.render("editCompanie", { Companie: {} });
     }
 
-    createEvent(req, res) {
-      const { title, description, image, dateBegin, dateEnd } = req.body
+    createCompanie(req, res) {
+      const { name, description, image, siteLink } = req.body
       this.repository
-        .create(title, description, image, dateBegin, dateEnd)
-        .then((event) => {
-          res.send({code:200, event});
+        .create(name, description, image, siteLink)
+        .then((companie) => {
+          res.send({code:200, companie});
         })
         .catch((err) => {
           res.sendStatus(500);
         });
     }
 
-    showEditEvent(req, res) {
+    showEditCompanie(req, res) {
       const id = req.params.id;
       this.repository
         .getOne(id)
-        .then((event) => {
-          res.render("editEvents", { event });
+        .then((companie) => {
+          res.render("editCompanie", { companie });
         })
         .catch((err) => {
           res.sendStatus(404);
@@ -47,19 +47,19 @@ export class EventsController {
     getOne(req, res) {
       let id = req.params.id;
       this.repository.getOne(id)
-      .then((event) => {
-        res.send({code:200, event});
+      .then((companie) => {
+        res.send({code:200, companie});
       })
       .catch((err) => {
         res.sendStatus(500);
       });
     }
   
-    modifyEvent(req, res) {
-      const { title, description, image, dateBegin, dateEnd } = req.body;
+    modifyCompanie(req, res) {
+      const { name, description, image, siteLink } = req.body;
       const id = req.params.id;
       this.repository
-        .update(id, title, description, image, dateBegin, dateEnd)
+        .update(id, name, description, image, siteLink)
         .then(() => {
           res.sendStatus(200);
         })
@@ -68,7 +68,7 @@ export class EventsController {
         });
     }
   
-    deleteEvent(req, res) {
+    deleteCompanie(req, res) {
       const id = req.params.id;
       this.repository
         .deleteOne(id)

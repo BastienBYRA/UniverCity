@@ -19,15 +19,19 @@ export class MongoFormationsRepository {
         if (err) {
           reject(err);
         } else {
-          resolve(formation.toObject());
+          if(formation) {
+            resolve(formation.toObject());
+          } else {
+            reject();
+          } 
         }
       });
     });
   }
 
-  create(name, duration, description, eduLevelAfter, numMAxPersons, image) {
+  create(title, img, desc, descShort, duration, niveau, numMaxPersons) {
     return new Promise((resolve, reject) => {
-      Formations.create({ name, duration, description, eduLevelAfter, numMAxPersons, image }, (err, formation) => {
+      Formations.create({ title, img, desc, descShort, duration, niveau, numMaxPersons }, (err, formation) => {
         if (err) {
           reject(err);
         } else {
@@ -37,11 +41,11 @@ export class MongoFormationsRepository {
     });
   }
 
-  update(id, name, duration, description, eduLevelAfter, numMAxPersons, image) {
+  update(id, title, img, desc, descShort, duration, niveau, numMaxPersons) {
     return new Promise((resolve, reject) => {
       Formations.updateOne(
         { _id: id },
-        { name, duration, description, eduLevelAfter, numMAxPersons, image },
+        { title, img, desc, descShort, duration, niveau, numMaxPersons },
         (err) => {
           if (err) {
             reject(err);

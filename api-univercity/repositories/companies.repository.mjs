@@ -1,13 +1,13 @@
-import { Events } from "../config/events.config.db.mjs";
+import { Companies } from "../config/Companies.config.db.mjs";
 
-export class MongoEventsRepository {
+export class MongoCompaniesRepository {
   getAll() {
     return new Promise((resolve, reject) => {
-      Events.find((err, events) => {
+      Companies.find((err, companies) => {
         if (err) {
           reject(err);
         } else {
-          resolve(events.map((event) => event.toObject()));
+          resolve(companies.map((companie) => companie.toObject()));
         }
       });
     });
@@ -15,34 +15,33 @@ export class MongoEventsRepository {
 
   getOne(id) {
     return new Promise((resolve, reject) => {
-      Events.findOne({ _id: id }, (err, event) => {
+      Companies.findOne({ _id: id }, (err, companie) => {
         if (err) {
           reject(err);
         } else {
-          resolve(event.toObject());
+          resolve(companie.toObject());
         }
       });
     });
   }
 
-  create(title, description, image, dateBegin, dateEnd) {
-    let dateCreation = new Date().toISOString().split('T')[0];
+  create(name, description, image, siteLink) {
     return new Promise((resolve, reject) => {
-      Events.create({ title, description, image, dateCreation, dateBegin, dateEnd }, (err, event) => {
+      Companies.create({ name, description, image, siteLink }, (err, companie) => {
         if (err) {
           reject(err);
         } else {
-          resolve(event.toObject());
+          resolve(companie.toObject());
         }
       });
     });
   }
 
-  update(id, title, description, image, dateBegin, dateEnd) {
+  update(id, name, description, image, siteLink) {
     return new Promise((resolve, reject) => {
-      Events.updateOne(
+      Companies.updateOne(
         { _id: id },
-        { title, description, image, dateBegin, dateEnd },
+        { name, description, image, siteLink },
         (err) => {
           if (err) {
             reject(err);
@@ -56,7 +55,7 @@ export class MongoEventsRepository {
 
   deleteOne(id) {
     return new Promise((resolve, reject) => {
-      Events.deleteOne({ _id: id }, (err) => {
+      Companies.deleteOne({ _id: id }, (err) => {
         if (err) {
           reject(err);
         } else {
