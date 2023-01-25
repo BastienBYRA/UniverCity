@@ -9,13 +9,17 @@ class FormationPage extends React.Component {
     super(props);
   }
 
+  componentDidMount = () => {
+    window.scrollTo(0, 0);
+  };
+
   render() {
     return (
       <div className="mx-36 my-12">
         <h1 className="text-3xl text-[#15191D] mb-6 font-bold text-center">
           Nos Formations
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12 mx-56">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12 mx-6 xl:mx-24 2xl:mx-56">
           {formationData &&
             formationData.map((formation) => {
               return (

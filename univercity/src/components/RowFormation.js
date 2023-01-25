@@ -34,7 +34,7 @@ class RowFormation extends React.Component {
         <div className="h-1 bg-black mb-4"></div>
 
         <div className="flex flex-row">
-          <img src={this.img} className="w-56" />
+          <img src={this.img} className="w-56 object-cover" />
           <div>
             <p className="ml-8 mr-6 text-lg">{this.desc}</p>
           </div>
