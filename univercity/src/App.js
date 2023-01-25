@@ -9,7 +9,7 @@ import AccueilPage from "./pages/Accueil.js";
 
 function App() {
   return (
-    <div>
+    <div className="App bg-[#F1F1F0]">
       <Header />
       <BrowserRouter>
         <Routes>
