@@ -17,5 +17,9 @@ export class UsersController {
           res.sendStatus(500);
         });
     }
+
+    showAddUser(req, res) {
+      res.render("edit", { user: {} });
+    }
   }
   

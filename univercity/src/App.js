@@ -5,6 +5,8 @@ import DescriptionPage from './pages/Description';
 import ActuPage from './pages/Actus.js';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Footer from "./components/Footer.js";
+import AccueilPage from "./pages/Accueil.js";
 
 import './App.css';
 

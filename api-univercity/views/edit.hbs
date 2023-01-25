@@ -1,0 +1,53 @@
+{{#if error}}
+  <div class="alert">
+    {{error}}
+  </div>
+{{/if}}
+<div class="card">
+  <div class="card-content">
+  {{#if formation._id}}
+    <form method="POST" action="/api/formations/edit/{{formation._id}}" novalidate>
+  {{else}}
+    <form method="POST" action="/api/formations/add" novalidate>
+  {{/if}}
+      <div class="field">
+        <div class="control">
+          <input class="input" name="name" placeholder='name' value="{{formation.name}}">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <textarea name="description">{{formation.description}}</textarea>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input class="input" name="duration" placeholder='Temp de la formation' value="{{formation.duration}}">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input class="input" type="number" name="numMAxPersons" placeholder='nombre de personnes max' value="{{formation.numMAxPersons}}">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input class="input" name="eduLevelAfter" value="{{formation.eduLevelAfter}}">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input class="input" type="url" name="image" value="{{formation.image}}">
+        </div>
+      </div>
+      <div class="content">
+        <a class="button" href="/api/events">
+          Cancel
+        </a>
+        <button class="button" type="submit">
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
