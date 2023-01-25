@@ -1,18 +1,26 @@
 [
     {
         "title": "Une nouvelle façon d'apprendre.",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula, neque nec placerat posuere, massa nibh feugiat ante, nec mattis nulla magna sit amet nisl. Cras non orci at enim fermentum molestie sed non justo. Nam quis velit ut nibh volutpat sagittis. Suspendisse eu nisi ut mi molestie dictum quis quis sem. Praesent sed metus in massa tincidunt finibus. Donec condimentum purus ante, ac vulputate ipsum tempor at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id est orci. Maecenas et ultricies ipsum. Mauris arcu elit, ultrices a sodales non, egestas vel augue. Donec nulla arcu, convallis vel dignissim a, tempor sit amet justo. Quisque vel nisl non lacus tristique laoreet."
+        "description": "UniverCity est bien plus qu'un campus, c'est une ville, dans laquelle chaque étudiant est un acteur du bon fonctionnement dans la cité, chacun contribue main dans la main avec leur compère ainsi que les entreprises partenaires, nous offrons une expérience mettant en valeur le travail de groupe ainsi que l'autonomie au quotidien à nos étudiants afin de pouvoir les préparer au monde professionnel en leur fournissant toutes les compétences nécessaires à leur embauche et plus."
     },
     {
         "title": "Des formations reconnu et désiré.",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula, neque nec placerat posuere, massa nibh feugiat ante, nec mattis nulla magna sit amet nisl. Cras non orci at enim fermentum molestie sed non justo. Nam quis velit ut nibh volutpat sagittis. Suspendisse eu nisi ut mi molestie dictum quis quis sem. Praesent sed metus in massa tincidunt finibus. Donec condimentum purus ante, ac vulputate ipsum tempor at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id est orci. Maecenas et ultricies ipsum. Mauris arcu elit, ultrices a sodales non, egestas vel augue. Donec nulla arcu, convallis vel dignissim a, tempor sit amet justo. Quisque vel nisl non lacus tristique laoreet."
+        "description": "UniverCity est fier de proposer des formations reconnues et désirées du BAC+5 reconnue par l'État dans les domaines de l'informatique, la mécanique et la biologie main dans la main avec des professionnels des domaines ainsi que des chercheurs."
     },
     {
-        "title": "Un travail récompensé.",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula, neque nec placerat posuere, massa nibh feugiat ante, nec mattis nulla magna sit amet nisl. Cras non orci at enim fermentum molestie sed non justo. Nam quis velit ut nibh volutpat sagittis. Suspendisse eu nisi ut mi molestie dictum quis quis sem. Praesent sed metus in massa tincidunt finibus. Donec condimentum purus ante, ac vulputate ipsum tempor at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id est orci. Maecenas et ultricies ipsum. Mauris arcu elit, ultrices a sodales non, egestas vel augue. Donec nulla arcu, convallis vel dignissim a, tempor sit amet justo. Quisque vel nisl non lacus tristique laoreet."
+        "title": "Des logements avantagueux.",
+        "description": "Nous fournissons, en partenariat avec un grand groupe de construction, un grand nombre de logement à prix avantageux situé proche de l'université, ces logements sont créés de sorte à ceux que les étudiants puissent aussi être proche les uns des autres, afin d'éviter l'isolement de certains."
+    },
+    {
+        "title": "Vie étudiante.",
+        "description": "UniverCity est construit autour de l'idée du bien-être étudiant, tant du coté de la formation que de la vie quotidienne, ainsi, la cité est remplie de lieu permettant le bien-être de chacun à proximité des logements (parc d'attractions futuriste, des salles de sport, des gymnases, des piscines...)."
+    },
+    {
+        "title": "Un travail récompensé avec des points (UniverCoin).",
+        "description": "Le bon travail ne se limite pas à une simple note, elle permet ici l'obtention d'une monnaie interne à UniverCity (UniverCoin) permettant de pouvoir acheter des tickets de transport, des biens chez les commerçants partenaires (Abonnement a une salle de sport, de la nourriture..., ou bien l'achat d'un service auprès d'un autre étudiant."
     },
     {
         "title": "Nos partenaires.",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula, neque nec placerat posuere, massa nibh feugiat ante, nec mattis nulla magna sit amet nisl. Cras non orci at enim fermentum molestie sed non justo. Nam quis velit ut nibh volutpat sagittis. Suspendisse eu nisi ut mi molestie dictum quis quis sem. Praesent sed metus in massa tincidunt finibus. Donec condimentum purus ante, ac vulputate ipsum tempor at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id est orci. Maecenas et ultricies ipsum. Mauris arcu elit, ultrices a sodales non, egestas vel augue. Donec nulla arcu, convallis vel dignissim a, tempor sit amet justo. Quisque vel nisl non lacus tristique laoreet."
+        "description": "De nombreuses entreprises nous soutiennent et sont prêtes à travailler avec vous, ainsi que, à la fin de votre cursus, vous embauchez."
     }
 ]

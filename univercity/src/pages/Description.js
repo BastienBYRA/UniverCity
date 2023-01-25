@@ -9,12 +9,12 @@ class DescriptionPage extends React.Component {
 
   render() {
     return (
-      <div className="mx-24 my-12">
-        <h1 className="text-center text-3xl font-bold">
+      <div className="mx-36 my-12">
+        <h1 className="text-center text-5xl font-bold">
           Le Campus de UniverCity
         </h1>
 
-        <div>
+        <div className="xl:mr-64 mt-12">
           {descData &&
             descData.map((data) => {
               return (
