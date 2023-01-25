@@ -1,0 +1,67 @@
+{{#if error}}
+  <div class="alert">
+    {{error}}
+  </div>
+{{/if}}
+<div class="card">
+  <div class="card-content">
+  {{#if user._id}}
+    <form method="POST" action="/api/users/edit/{{user._id}}" novalidate>
+  {{else}}
+    <form method="POST" action="/api/users/add" novalidate>
+  {{/if}}
+      <div class="field">
+        <div class="control">
+          <input class="input" name="lastName" placeholder='name' value="{{user.lastName}}">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input class="input" name="firstName" placeholder='firstName' value="{{user.firstName}}">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input class="input" name="INE" placeholder='INE' value="{{user.INE}}">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input class="input" type="email" name="email" placeholder='email' value="{{user.email}}">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input class="input" name="login" placeholder='login' value="{{user.login}}">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input class="input" name="password" placeholder='password' value="{{user.password}}">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <textarea name="" id="">
+            {{#each user.subjects}}
+            {{this}}
+            {{/each}}
+          </textarea>
+          <select name="subjects" multiple>
+            {{#each subjectsForUser}}
+              <option value="{{this._id}}">{{this.name}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+      <div class="content">
+        <a class="button" href="/api/users">
+          Cancel
+        </a>
+        <button class="button" type="submit">
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

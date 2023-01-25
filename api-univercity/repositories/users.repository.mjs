@@ -2,36 +2,23 @@ import { User } from "../config/users.config.db.mjs";
 
 export class MongoUsersRepository {
   getAll() {
-    console.log('REPOSITORY');
     return new Promise((resolve, reject) => {
-      User.find((err, users) => {
+      User.aggregate([
+        {
+          $lookup: {
+            from: "subjects",
+            localField: "subjects",
+            foreignField: "_id",
+            as: "subjects"
+          }
+        }
+      ], (err, users) => {
         if (err) {
           reject(err);
         } else {
-          resolve(users.map((user) => user.toObject()));
+          resolve(users.map((user) =>  user));
         }
-      });
-    });
-  }
-
-/*   getByResearch(search) {
-    return new Promise((resolve, reject) => {
-      User.find(
-        {
-          $or: [
-            { lastName: { $regex: new RegExp(search, "i") } },
-            { firstName: { $regex: new RegExp(search, "i") } },
-            { email: { $regex: new RegExp(search, "i") } },
-          ],
-        },
-        (err, users) => {
-          if (err) {
-            reject(err);
-          } else {
-            resolve(users.map((user) => user.toObject()));
-          }
-        }
-      );
+      })
     });
   }
 
@@ -47,41 +34,25 @@ export class MongoUsersRepository {
     });
   }
 
-  create(firstName, lastName, email) {
+  create(email, lastName, firstName, login, password, mobile, INE, subjects) {
     return new Promise((resolve, reject) => {
-      User.findOne({ email: email }, (err, user) => {
-        if (user) {
-          reject("This email is already used.");
+      User.create({ email, lastName, firstName, login, password, mobile, INE, subjects }, (err, user) => {
+        if (err) {
+          reject(err);
         } else {
-          User.create({ firstName, lastName, email }, (err, user) => {
-            if (err) {
-              reject(err);
-            } else {
-              resolve(user.toObject());
-            }
-          });
+          resolve(user.toObject());
         }
       });
     });
   }
 
-  update(id, firstName, lastName, email) {
+  update(id, email, lastName, firstName, login, password, mobile, INE, subjects) {
     return new Promise((resolve, reject) => {
-      User.findOne({ email: email }, (err, user) => {
-        if (user) {
-          reject("This email is already used.");
+      User.updateOne({ _id: id }, { email, lastName, firstName, login, password, mobile, INE, subjects }, (err) => {
+        if (err) {
+          reject(err);
         } else {
-          User.updateOne(
-            { _id: id },
-            { firstName, lastName, email },
-            (err, user) => {
-              if (err) {
-                reject(err);
-              } else {
-                resolve();
-              }
-            }
-          );
+          resolve();
         }
       });
     });
@@ -97,5 +68,5 @@ export class MongoUsersRepository {
         }
       });
     });
-  } */
+  }
 }

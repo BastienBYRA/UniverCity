@@ -4,7 +4,6 @@ export const usersRoutes = (controller) => {
   const router = Router();
 
   router.get("/", (req, res) => {
-    console.log('ROUTE');
     controller.showHome(req, res);
   });
 
@@ -14,6 +13,18 @@ export const usersRoutes = (controller) => {
 
   router.post("/add", (req, res) => {
     controller.createUser(req, res);
+  });
+
+  router.get("/edit/:id", (req, res) => {
+    controller.showEditUser(req, res);
+  }); 
+
+  router.post("/edit/:id", (req, res) => {
+    controller.modifyUser(req, res);
+  });
+
+  router.post("/delete/:id", (req, res) => {
+    controller.deleteUser(req, res);
   });
 
   return router;
