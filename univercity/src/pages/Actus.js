@@ -22,7 +22,6 @@ class ActuPage extends React.Component {
                     )
                 })}
             </div>
-            
         </div>
         )
     }
