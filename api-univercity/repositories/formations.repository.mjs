@@ -1,13 +1,13 @@
-import { Events } from "../config/events.config.db.mjs";
+import { Formations } from "../config/formations.config.db.mjs";
 
-export class MongoEventsRepository {
+export class MongoFormationsRepository {
   getAll() {
     return new Promise((resolve, reject) => {
-      Events.find((err, events) => {
+      Formations.find((err, formations) => {
         if (err) {
           reject(err);
         } else {
-          resolve(events.map((event) => event.toObject()));
+          resolve(formations.map((formation) => formation.toObject()));
         }
       });
     });
@@ -15,36 +15,33 @@ export class MongoEventsRepository {
 
   getOne(id) {
     return new Promise((resolve, reject) => {
-      Events.findOne({ _id: id }, (err, event) => {
+      Formations.findOne({ _id: id }, (err, formation) => {
         if (err) {
           reject(err);
         } else {
-          resolve(event.toObject());
+          resolve(formation.toObject());
         }
       });
     });
   }
 
-  create(name, description, dateBegin, dateEnd) {
-    let dateCreation = new Date().toISOString().split('T')[0];
+  create(name, duration, description, eduLevelAfter, numMAxPersons, image) {
     return new Promise((resolve, reject) => {
-      Events.create({ name, description, dateCreation, dateBegin, dateEnd }, (err, event) => {
+      Formations.create({ name, duration, description, eduLevelAfter, numMAxPersons, image }, (err, formation) => {
         if (err) {
           reject(err);
         } else {
-          resolve(event.toObject());
+          resolve(formation.toObject());
         }
       });
     });
   }
 
-  update(id, name, description, dateBegin, dateEnd) {
-    
-
+  update(id, name, duration, description, eduLevelAfter, numMAxPersons, image) {
     return new Promise((resolve, reject) => {
-      Events.updateOne(
+      Formations.updateOne(
         { _id: id },
-        { name, description, dateBegin, dateEnd },
+        { name, duration, description, eduLevelAfter, numMAxPersons, image },
         (err) => {
           if (err) {
             reject(err);
@@ -58,7 +55,7 @@ export class MongoEventsRepository {
 
   deleteOne(id) {
     return new Promise((resolve, reject) => {
-      Events.deleteOne({ _id: id }, (err) => {
+      Formations.deleteOne({ _id: id }, (err) => {
         if (err) {
           reject(err);
         } else {

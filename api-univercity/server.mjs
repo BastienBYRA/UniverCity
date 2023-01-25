@@ -10,6 +10,11 @@ import { eventsRoutes } from "./routes/events.route.mjs";
 import { EventsController } from "./controllers/events.controller.mjs";
 import { MongoEventsRepository } from "./repositories/events.repository.mjs";
 
+import { formationsRoutes } from "./routes/formations.route.mjs";
+import { FormationsController } from "./controllers/formations.controller.mjs";
+import { MongoFormationsRepository } from "./repositories/formations.repository.mjs";
+
+
 import cors from "cors";
 
 const PORT = process.env.PORT || 3000;
@@ -30,6 +35,9 @@ const usersController = new UsersController(usersRepository);
 const eventsRepository = new MongoEventsRepository();
 const eventsController = new EventsController(eventsRepository);
 
+const formationsRepository = new MongoFormationsRepository();
+const formationsController = new FormationsController(formationsRepository);
+
 app.use(
   express.urlencoded({
     extended: true,
@@ -41,12 +49,9 @@ app.use(express.static("assets"));
 
 app.use("/api/users", usersRoutes(usersController));
 app.use("/api/events", eventsRoutes(eventsController));
-
-/* app.use('/api/users', usersRoutes(usersController));
-app.use('/', pagesRoutes(pagesController)); */
+app.use("/api/formations", formationsRoutes(formationsController));
 
 mongoose.set("strictQuery", false);
-
 mongoose.connect("mongodb://localhost:27017/univercity", (error) => {
   if (error) throw error;
   console.info("Database successfully connected");

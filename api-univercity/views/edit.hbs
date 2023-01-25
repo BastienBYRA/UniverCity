@@ -5,31 +5,39 @@
 {{/if}}
 <div class="card">
   <div class="card-content">
-  {{#if event._id}}
-    <form method="POST" action="/api/events/edit/{{event._id}}" novalidate>
+  {{#if formation._id}}
+    <form method="POST" action="/api/formations/edit/{{formation._id}}" novalidate>
   {{else}}
-    <form method="POST" action="/api/events/add" novalidate>
+    <form method="POST" action="/api/formations/add" novalidate>
   {{/if}}
       <div class="field">
         <div class="control">
-          <input class="input" name="name" placeholder='name' value="{{event.name}}">
+          <input class="input" name="name" placeholder='name' value="{{formation.name}}">
         </div>
       </div>
       <div class="field">
         <div class="control">
-          <textarea name="description">{{event.description}}</textarea>
+          <textarea name="description">{{formation.description}}</textarea>
         </div>
       </div>
       <div class="field">
         <div class="control">
-          <label for="dateBegin">date début</label>
-          <input class="input" name="dateBegin" type="date" value="{{event.dateBegin}}">
+          <input class="input" name="duration" placeholder='Temp de la formation' value="{{formation.duration}}">
         </div>
       </div>
       <div class="field">
         <div class="control">
-          <label for="dateBegin">date fin</label>
-          <input class="input" name="dateEnd" type="date" placeholder='date de fin' value="{{event.dateEnd}}">
+          <input class="input" type="number" name="numMAxPersons" placeholder='nombre de personnes max' value="{{formation.numMAxPersons}}">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input class="input" name="eduLevelAfter" value="{{formation.eduLevelAfter}}">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input class="input" type="url" name="image" value="{{formation.image}}">
         </div>
       </div>
       <div class="content">

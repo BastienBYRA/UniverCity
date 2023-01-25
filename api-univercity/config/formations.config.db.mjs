@@ -6,7 +6,7 @@ const formationsSchema = mongoose.Schema(
       duration: String,
       description: String,
       eduLevelAfter: String,
-      numMAxPerson: Number,
+      numMAxPersons: Number,
       image: String
     },
     {
@@ -14,4 +14,4 @@ const formationsSchema = mongoose.Schema(
     }
   );
 
-export const User = mongoose.model("Formations", formationsSchema, 'univercity');
+export const Formations = mongoose.model("Formations", formationsSchema, 'univercity');
