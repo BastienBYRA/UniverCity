@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Banner from "../components/Banner";
 import Header from "../components/Header";
 import TitleWithSubtext from "../components/TitleWithSubtext";
@@ -13,7 +14,7 @@ class AccueilPage extends React.Component {
     return (
       <>
         <Banner />
-        <div className="mb-8">
+        <div className="mx-36">
           <div className="campus-presentation flex flex-col">
             <h1 className="text-3xl text-[#15191D] mb-10 font-bold">Notre campus</h1>
             <div className="mx-auto bg-white w-9/12 p-2 shadow-xl">
@@ -39,6 +40,41 @@ class AccueilPage extends React.Component {
                 </svg>
               </a>
             </div>
+
+          <div className="mt-24 mb-12">
+            <h1 className="text-5xl mb-10 font-bold text-center">
+              Nos formations
+            </h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12 my-12">
+              <div className="rounded-lg shadow-lg hover:shadow-2xl duration-300 hover:scale-110">
+                <img
+                  className="rounded-t-lg aspect-video object-fill"
+                  src="https://asset.lemde.fr/prd-blogs/2020/07/48b7729e-ezgif.com-webp-to-jpg.jpg"
+                />
+                <p className="text-center my-4 text-lg">Informatique</p>
+              </div>
+              <div className="rounded-lg shadow-lg hover:shadow-2xl duration-300 hover:scale-110">
+                <img
+                  className="rounded-t-lg aspect-video object-fill "
+                  src="https://www.iut-brest.fr/wp-content/uploads/2019/08/IUT-BREST_GMP-4-1200x801.jpg"
+                />
+                <p className="text-center my-4 text-lg">Mécanique</p>
+              </div>
+              <div className="rounded-lg shadow-lg hover:shadow-2xl duration-300 hover:scale-110">
+                <img
+                  className="rounded-t-lg aspect-video object-fill"
+                  src="https://master-alfacentre.alfacentre.org/sites/default/files/media/FM/images_ROME/i_rome_K2402.jpg"
+                />
+                <p className="text-center my-4 text-lg">Biologie</p>
+              </div>
+            </div>
+
+            <Link
+              className="flex items-center justify-center mx-auto w-[10%] border border-black py-2 px-6 rounded-md hover:bg-neutral-100 duration-200"
+              to="/formations"
+            >
+              Voir plus
+            </Link>
           </div>
         </div>
       </>
