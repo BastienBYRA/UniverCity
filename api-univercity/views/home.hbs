@@ -1,0 +1,20 @@
+<div id="add-button-research-bar-container">
+  <h1>ALed</h1>
+</div>
+
+<button><a href="/api/subjects/add">Add subject</a></button>
+<ul>
+  {{#each subjects}}
+    <li>
+      <button><a href="/api/subjects/edit/{{this._id}}">Editer</a></button>
+      <form action="/api/subjects/delete/{{this._id}}"
+            method="POST"
+            onSubmit="if(!confirm('Voulez vous vraiment supprimer cet event ?')){return false;}">
+             <button type="submit">
+               Delete
+             </button>
+           </form>
+      <p>Nom : {{this.name}}</p>
+    </li>
+  {{/each}}
+</ul>
