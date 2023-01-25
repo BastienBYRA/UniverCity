@@ -18,7 +18,7 @@ class RowFormation extends React.Component {
 
   render() {
     return (
-      <div className="mt-6" id={this._id}>
+      <div className="mt-6 text-[#373737] text-[15px]" id={this._id}>
         <div className="flex flex-row items-center justify-between">
           <p className="text-[#CC0066] text-2xl">{this.title}</p>
           <div className="flex flex-row gap-2 items-end">
@@ -36,7 +36,7 @@ class RowFormation extends React.Component {
         <div className="flex flex-row">
           <img src={this.img} className="w-56 object-cover" />
           <div>
-            <p className="ml-8 mr-6 text-lg">{this.desc}</p>
+            <p className="ml-8 mr-6">{this.desc}</p>
           </div>
         </div>
       </div>

@@ -21,7 +21,7 @@ export const formationsRoutes = (controller) => {
 
   router.get("/edit/:id", (req, res) => {
     controller.showEditFormation(req, res);
-  }); 
+  });
 
   router.post("/edit/:id", (req, res) => {
     controller.modifyFormation(req, res);
@@ -30,7 +30,6 @@ export const formationsRoutes = (controller) => {
   router.post("/delete/:id", (req, res) => {
     controller.deleteFormation(req, res);
   });
-  
+
   return router;
 };
-

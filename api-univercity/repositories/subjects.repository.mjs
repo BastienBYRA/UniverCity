@@ -39,17 +39,13 @@ export class MongoSubjectsRepository {
 
   update(id, name) {
     return new Promise((resolve, reject) => {
-      Subjects.updateOne(
-        { _id: id },
-        { name },
-        (err) => {
-          if (err) {
-            reject(err);
-          } else {
-            resolve();
-          }
+      Subjects.updateOne({ _id: id }, { name }, (err) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve();
         }
-      );
+      });
     });
   }
 

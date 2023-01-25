@@ -80,7 +80,7 @@ export class MongoUsersRepository {
 
   update(id, email, lastName, firstName, password, mobile, INE, subjects) {
     return new Promise((resolve, reject) => {
-      User.find({ email: email, '_id': {$ne : id}}, (err, user) => {
+      User.find({ email: email, _id: { $ne: id } }, (err, user) => {
         if (user[0] != null) {
           reject("This email is already used.");
         } else {
