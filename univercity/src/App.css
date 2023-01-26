@@ -106,3 +106,9 @@ table h2{
 td li{
   margin-bottom: 15px;
 }
+
+.borderTitle::before{
+  content:"";
+  border: 4px solid #CC0066;
+  margin-right:10px;
+}
