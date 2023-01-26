@@ -6,6 +6,26 @@ import entrepriseData from "../data/entreprisePageContent.json"
 class EntreprisesPage extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {listEntreprises: null}
+    }
+
+    componentDidMount = () => {
+        this.fetchFormation();
+    };
+
+    fetchFormation = async () => {
+        await fetch(`http://152.228.210.58/api/companies/`)
+        .then((response) => {
+            if(response.ok) {
+                return response.json();
+            }
+        })
+        .then((responseJson)=> {
+            this.setState({listEntreprises: responseJson.companies})
+        })
+        .catch(async (error) => {
+            alert("Erreur, impossible de fetch la liste des entreprises")
+        });
     }
 
     render() {
