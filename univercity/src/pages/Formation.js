@@ -1,8 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import CardWithDesc from "../components/CardWithDesc";
 import RowFormation from "../components/RowFormation";
-// import formationData from "../data/formationPageContent.json";
 
 class FormationPage extends React.Component {
   constructor(props) {

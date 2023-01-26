@@ -16,12 +16,10 @@ class CardWithLink extends React.Component {
 
     render() {
         return (
-            <a href={this.lien} className="group" target="_blank">
-                <div className="group rounded-lg shadow-xl hover:shadow-2xl duration-300">
-                    <img className="rounded-t-lg aspect-video object-fill w-full" src={this.img} alt={this.title}/>
-                    <p className="text-center my-4 text-[#373737] text-[15px] py-2 px-4 group-hover:text-[#CC0066]">{this.desc}</p>
-                </div>
-            </a>
+            <div className="group rounded-lg shadow-xl hover:shadow-2xl duration-300">
+                <img className="rounded-t-lg aspect-video object-fill w-full" src={this.img} alt={this.title}/>
+                <p className="text-center my-4 text-[#373737] text-[15px] py-2 px-4 group-hover:text-[#CC0066]">{this.desc}</p>
+            </div>
         );
     }
 }
