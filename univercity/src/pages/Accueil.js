@@ -10,7 +10,7 @@ import { HashLink } from "react-router-hash-link";
 class AccueilPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {listFormation: null}
+    this.state = { listFormation: null };
   }
 
   componentDidMount = () => {
@@ -25,23 +25,23 @@ class AccueilPage extends React.Component {
         }
       })
       .then((responseJson) => {
-        this.setState({listFormation : responseJson.formations})
+        this.setState({ listFormation: responseJson.formations });
       })
       .catch(async (error) => {
-        alert("Erreur, impossible de fetch la liste des formations")
+        alert("Erreur, impossible de fetch la liste des formations");
       });
-  }
+  };
 
   render() {
     return (
       <>
         <Banner />
-        <div className="mx-36">
+        <div className="mx-12 sm:mx-24 xl:mx-36">
           <div className="campus-presentation flex flex-col">
             <h1 className="text-3xl text-[#15191D] mb-10 font-bold">
               Notre campus
             </h1>
-            <div className="mx-auto bg-white w-9/12 p-2 shadow-xl">
+            <div className="md:mx-12 lg:mx-24 bg-white p-2 shadow-xl">
               <p className="text-[#373737] text-[15px]">
                 La Cité universitaire UniverCity est un lieu de vie et
                 d'apprentissage exceptionnel, offrant un cadre de vie idéal pour
@@ -79,7 +79,7 @@ class AccueilPage extends React.Component {
               <h1 className="text-3xl text-[#15191D] font-bold">
                 Nos formations
               </h1>
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12 my-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 my-12">
                 {this.state.listFormation &&
                   this.state.listFormation.map((formation) => {
                     return (
@@ -91,7 +91,7 @@ class AccueilPage extends React.Component {
               </div>
 
               <Link
-                className="flex items-center justify-center mx-auto w-[10%] border border-black py-2 px-6 rounded-md hover:bg-neutral-100 duration-200 hover:text-[#CC0066] hover:border-[#CC0066]"
+                className="flex items-center justify-center mx-auto w-[10%] min-w-[150px] border border-black py-2 px-6 rounded-md hover:bg-neutral-100 duration-200 hover:text-[#CC0066] hover:border-[#CC0066]"
                 to="/formation"
               >
                 Voir plus

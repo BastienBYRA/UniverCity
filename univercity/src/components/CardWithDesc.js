@@ -15,12 +15,18 @@ class CardWithDesc extends React.Component {
 
   render() {
     return (
-      <div className="group rounded-lg shadow-xl hover:shadow-2xl duration-300">
+      <div className="group rounded-lg shadow-xl hover:shadow-2xl duration-300 flex flex-col">
         <h2 className="group-hover:text-[#CC0066] text-center my-4 font-semibold text-lg mb-1">
           {this.title}
         </h2>
-        <img className="rounded-t-lg aspect-video object-fill w-full" src={this.img} alt={this.title}/>
-        <p className="text-center my-4 text-[#373737] text-[15px] py-2 px-4">{this.desc}</p>
+        <img
+          className="rounded-t-lg aspect-video object-fill w-full"
+          src={this.img}
+          alt={this.title}
+        />
+        <p className="text-center my-auto text-[#373737] text-[15px] p-4">
+          {this.desc}
+        </p>
       </div>
     );
   }
