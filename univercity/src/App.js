@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import DescriptionPage from "./pages/Description";
 import ActuPage from "./pages/Actus.js";
-import Inscription from "./data/inscriptionPageContent.json";
+import Inscription from "./pages/inscription.js";
 import LeanCanvas from "./components/lean-canvas.js";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
