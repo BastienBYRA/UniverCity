@@ -8,5 +8,20 @@
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0hUffaLPqEj6iL-B5Xj7xI8Mk9vFeNn1JbA&usqp=CAU",
     "description": "Tesla Inc. est un constructeur automobile de voitures électriques dont le siège social se situe aux États-Unis.",
     "lien": "https://www.tesla.com/fr_fr"
+  },
+  {
+    "image": "https://m.media-amazon.com/images/G/08/social_share/amazon_logo._CB633266374_.png",
+    "description": "Entreprise de e-commerce",
+    "lien": "https://www.amazon.fr/"
+  },
+  {
+  "image": "https://upload.wikimedia.org/wikipedia/fr/thumb/4/47/Nvidia_%28logo%29.svg/1200px-Nvidia_%28logo%29.svg.png",
+  "description": "Créateur de carte graphique et de data-centeur",
+  "lien": "https://www.nvidia.com/fr-fr/"
+  },
+  {
+  "image":"https://www.dynamique-mag.com/wp-content/uploads/Intel-780x470.png",
+  "description":"Intel est un grand fabricateur de puces pour pc",
+  "lien":"https://www.intel.fr/content/www/fr/fr/homepage.html"
   }
 ]

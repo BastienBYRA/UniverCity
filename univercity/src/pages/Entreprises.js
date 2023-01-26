@@ -37,6 +37,24 @@ class EntreprisesPage extends React.Component {
                     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12">
                         {this.state.listEntreprises && this.state.listEntreprises.map((companies) => {
                             return (
+                                if(companies.valid === true){
+                                    <CardWithLink
+                                    title={companies.title}
+                                    img={companies.image}
+                                    desc={companies.description}
+                                    lien={companies.siteLink}
+                                />
+                                }
+                            );
+                        })}
+                    </div>
+                </div>
+                <h1 className="text-center text-3xl text-[#15191D] font-bold">Potentielles future partenaires UniverCity</h1>
+
+                <div className="flex mx-auto mt-12">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12">
+                        {this.state.listEntreprises && this.state.listEntreprises.map((companies) => {
+                            return (
                                 <CardWithLink
                                     title={companies.title}
                                     img={companies.image}
