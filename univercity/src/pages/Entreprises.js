@@ -35,13 +35,13 @@ class EntreprisesPage extends React.Component {
 
                 <div className="flex mx-auto mt-12">
                     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12">
-                        {entrepriseData && entrepriseData.map((data) => {
+                        {this.state.listEntreprises && this.state.listEntreprises.map((companies) => {
                             return (
                                 <CardWithLink
-                                    title={data.title}
-                                    img={data.image}
-                                    desc={data.description}
-                                    lien={data.lien}
+                                    title={companies.title}
+                                    img={companies.image}
+                                    desc={companies.description}
+                                    lien={companies.siteLink}
                                 />
                             );
                         })}
