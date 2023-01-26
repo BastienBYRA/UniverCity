@@ -5,7 +5,7 @@ import { mongoose } from "mongoose";
       name: String,
       description: String,
       image: String,
-      siteLink: String,
+      siteLink: String
     },
     {
       timestamps: true,

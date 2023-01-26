@@ -39,12 +39,27 @@ export class UsersController {
     });
   }
 
+  showAddAdmin(req, res) {
+    res.render("editAdmin", { user: {} });
+  }
+
   createUser(req, res) {
-    const { email, lastName, firstName, password, mobile, INE, subjects } = req.body;
+    const { email, lastName, firstName, password, mobile, INE, subjects } =
+      req.body;
+    let isAdmin = false;
     bcrypt.genSalt(10, (err, salt) => {
       bcrypt.hash(password, salt).then((hash) => {
         this.usersRepository
-          .create(email, lastName, firstName, hash, mobile, INE, subjects)
+          .create(
+            email,
+            lastName,
+            firstName,
+            hash,
+            mobile,
+            INE,
+            subjects,
+            isAdmin
+          )
           .then((user) => {
             res.send({ user });
           })
@@ -53,6 +68,40 @@ export class UsersController {
           });
       });
     });
+  }
+
+  createAdmin(req, res) {
+    this.usersRepository
+      .checkAdminExist()
+      .then(() => {
+        const { email, lastName, firstName, password, mobile, INE, subjects } =
+          req.body;
+        let isAdmin = true;
+        bcrypt.genSalt(10, (err, salt) => {
+          bcrypt.hash(password, salt).then((hash) => {
+            this.usersRepository
+              .create(
+                email,
+                lastName,
+                firstName,
+                hash,
+                mobile,
+                INE,
+                subjects,
+                isAdmin
+              )
+              .then((user) => {
+                res.send({ user });
+              })
+              .catch((err) => {
+                res.send({ code: 500, msg: err });
+              });
+          });
+        });
+      })
+      .catch((err) => {
+        console.log("Il y a deja un admin !");
+      });
   }
 
   /**

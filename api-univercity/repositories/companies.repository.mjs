@@ -1,4 +1,4 @@
-import { Companies } from "../config/Companies.config.db.mjs";
+import { Companies } from "../config/companies.config.db.mjs";
 
 export class MongoCompaniesRepository {
   getAll() {
