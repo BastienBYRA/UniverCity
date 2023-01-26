@@ -7,7 +7,7 @@ import CardWithDesc from "../components/CardWithDesc";
 class EntreprisesPage extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {listFormation: null}
+        this.state = { listFormation: null }
     }
 
     componentDidMount = () => {
@@ -23,7 +23,7 @@ class EntreprisesPage extends React.Component {
                 }
             })
             .then((responseJson) => {
-                this.setState({listEntreprises: responseJson.companies})
+                this.setState({ listEntreprises: responseJson.companies })
             })
             .catch(async (error) => {
                 alert("Erreur, impossible de fetch la liste des entreprises")
@@ -39,15 +39,40 @@ class EntreprisesPage extends React.Component {
                     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12">
                         {this.state.listEntreprises &&
                             this.state.listEntreprises.map((entreprise) => {
-                                return (
-                                    <a href={entreprise.siteLink} className="group" target="_blank">
-                                        <CardWithLink
-                                            title={entreprise.name}
-                                            img={entreprise.image}
-                                            desc={entreprise.description}
-                                        />
-                                    </a>
-                                );
+                                if (entreprise.partenaire === true) {
+                                    return (
+                                        <a href={entreprise.siteLink} className="group" target="_blank">
+                                            <CardWithLink
+                                                title={entreprise.name}
+                                                img={entreprise.image}
+                                                desc={entreprise.description}
+                                            />
+                                        </a>
+                                    );
+                                    return null;
+                                }
+                            })}
+                    </div>
+                </div>
+
+                <h1 className="text-center text-3xl text-[#15191D] font-bold">Future potentielle partenaire UniverCity</h1>
+
+                <div className="flex mx-auto mt-12">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12">
+                        {this.state.listEntreprises &&
+                            this.state.listEntreprises.map((entreprise) => {
+                                if (entreprise.partenaire === false) {
+                                    return (
+                                        <a href={entreprise.siteLink} className="group" target="_blank">
+                                            <CardWithLink
+                                                title={entreprise.name}
+                                                img={entreprise.image}
+                                                desc={entreprise.description}
+                                            />
+                                        </a>
+                                    );
+                                    return null;
+                                }
                             })}
                     </div>
                 </div>
@@ -84,17 +109,17 @@ class EntreprisesPage extends React.Component {
                             />
                         </div>
                         <div className="sm:col-span-2">
-                    <textarea
-                        id="message"
-                        rows="2"
-                        className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border
+                            <textarea
+                                id="message"
+                                rows="2"
+                                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border
                         border-gray-300 focus:outline-none focus:border-2 focus:border-[#CC0066] dark:bg-gray-700
                         dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500
                         dark:focus:border-primary-500"
-                        placeholder="Message"
-                        name="message"
-                        required
-                    ></textarea>
+                                placeholder="Message"
+                                name="message"
+                                required
+                            ></textarea>
                         </div>
                         <button
                             type="submit"
