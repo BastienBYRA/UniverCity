@@ -1,6 +1,8 @@
 //npm i emailjs-com
-import {useState} from "react";
-import {send} from "emailjs-com";
+import { useState } from "react";
+import { send } from "emailjs-com";
+import TitleWithSubtext from "../components/TitleWithSubtext";
+import inscriptionData from "../data/inscriptionPageContent.json";
 
 function Inscription() {
     const [toSend, setToSend] = useState({
@@ -22,7 +24,7 @@ function Inscription() {
         )
             .then((response) => {
                 alert('Votre demande a été envoyée !', response.status, response.text);
-                document.location.href="http://localhost:3000/";
+                document.location.href = "http://localhost:3000/";
             })
             .catch((err) => {
                 alert('Erreur lors de l\'envoi du formulaire...', err);
@@ -30,54 +32,33 @@ function Inscription() {
     };
 
     const handleChange = (e) => {
-        setToSend({...toSend, [e.target.name]: e.target.value});
+        setToSend({ ...toSend, [e.target.name]: e.target.value });
     };
 
     return (
         <>
+
+
             <div className="index-head">
                 <h1>Univercity</h1>
                 <p>
                     Un avenir étudiant épanouissant,
-                    <br/>
+                    <br />
                     une Cité universitaire révolutionnaire
                 </p>
             </div>
+            <div className="w-9/12 mx-auto mt-12 mb-12">
+                {inscriptionData &&
+                    inscriptionData.map((data) => {
+                        return (
+                            <TitleWithSubtext
+                                title={data.title}
+                                description={data.description}
+                            />
+                        );
+                    })}
+            </div>
             <div className="w-9/12 mx-auto text-[#373737] text-[15px]">
-                <ul className="mb-16">
-                    <li className="mb-4">
-                        <h2 className="font-medium text-2xl text-[#CC0066]">Opportunités d'enseignement :</h2>
-                        Les professeurs ont la possibilité d'enseigner à une population diversifiée d'étudiants,
-                        ce qui peut offrir des défis et des opportunités d'enseignement
-                        passionnants.
-                    </li>
-                    <li className="mb-4">
-                        <h2 className="font-medium text-2xl text-[#CC0066]">Recherche et développement :</h2>
-                        Les professeurs peuvent avoir accès à des installations de recherche de pointe et à
-                        des partenariats avec des entreprises et des organisations qui
-                        peuvent les aider à mener des recherches de haut niveau et à
-                        développer leur carrière professionnelle.
-                    </li>
-                    <li className="mb-4">
-                        <h2 className="font-medium text-2xl text-[#CC0066]">Ressources pour l'enseignement :</h2>
-                        Les professeurs peuvent avoir accès à des ressources pédagogiques et technologiques
-                        pour améliorer leur enseignement et leur rendre plus efficace.
-                    </li>
-                    <li className="mb-4">
-                        <h2 className="font-medium text-2xl text-[#CC0066]">
-                            Possibilité de participer à des projets de développement de la
-                            ville :
-                        </h2>{" "}
-                        Les professeurs peuvent participer à des projets pour améliorer les
-                        conditions de vie dans la ville, et ainsi contribuer à la
-                        communauté.
-                    </li>
-                    <li>
-                        <h2 className="font-medium text-2xl text-[#CC0066]">Ambiance de travail agréable :</h2>
-                        Les professeurs peuvent bénéficier d'un environnement de travail stimulant et
-                        collaboratif, avec des collègues et des étudiants passionnés.
-                    </li>
-                </ul>
                 <h1 className="text-3xl text-[#15191D] font-bold text-center mb-10">Inscrivez vous</h1>
                 <form onSubmit={onSubmit} className="w-4/6 flex flex-col mx-auto" action="#" method="POST">
                     <div className="flex justify-around mb-4">

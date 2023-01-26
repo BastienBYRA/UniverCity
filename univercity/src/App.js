@@ -2,8 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import DescriptionPage from "./pages/Description";
 import ActuPage from "./pages/Actus.js";
-import Inscription from "./components/inscription";
-
+import Inscription from "./pages/inscription";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer.js";
 import AccueilPage from "./pages/Accueil.js";
