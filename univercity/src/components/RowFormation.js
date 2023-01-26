@@ -1,9 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Banner from "./Banner";
-import Header from "./Header";
-import TitleWithSubtext from "./TitleWithSubtext";
-import descData from "../data/descriptionPageContent.json";
 
 class RowFormation extends React.Component {
   constructor(props) {
