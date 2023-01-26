@@ -4,6 +4,7 @@ import CampusHead from "./components/campus.js";
 import DescriptionPage from "./pages/Description";
 import ActuPage from "./pages/Actus.js";
 import Inscription from "./components/inscription";
+import LeanCanvas from "./components/lean-canvas.js";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer.js";
@@ -22,7 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<AccueilPage />} />
           <Route path="description" element={<DescriptionPage />} />
-          <Route path="formation" element={<FormationPage />} />
+          <Route path="formation" element={<LeanCanvas />} />
           <Route path="actus" element={<ActuPage />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="inscription" element={<Inscription />} />
