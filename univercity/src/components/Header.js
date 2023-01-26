@@ -46,6 +46,15 @@ class Header extends React.Component {
                 </li>
                 <li>
                   <a
+                    href="/entreprises"
+                    className="block py-2 pl-3 text-[#636363] hover:text-[#CC0066] no-underline text-base uppercase"
+                    aria-current="page"
+                  >
+                    Entreprises
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="/actus"
                     className="block py-2 pl-3 text-[#636363] hover:text-[#CC0066] no-underline text-base uppercase"
                     aria-current="page"
