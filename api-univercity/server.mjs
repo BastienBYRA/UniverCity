@@ -20,14 +20,14 @@ import { SubjectsController } from "./controllers/subjects.controller.mjs";
 import { MongoSubjectsRepository } from "./repositories/subjects.repository.mjs";
 
 import { companiesRoutes } from "./routes/companies.route.mjs";
-import {CompaniesController } from "./controllers/companies.controller.mjs";
+import { CompaniesController } from "./controllers/companies.controller.mjs";
 import { MongoCompaniesRepository } from "./repositories/companies.repository.mjs";
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:3000", // TODO Mettre à jour le port pour la prod
+    origin: ["http://152.228.210.58", "http://localhost:3000"], // TODO Mettre à jour le port pour la prod
   })
 );
 
