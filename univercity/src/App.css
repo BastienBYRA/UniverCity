@@ -82,3 +82,27 @@
 .campus-presentation {
   text-align: center;
 }
+table{
+  width:90%;
+  margin:auto;
+  margin-top:30px;
+  margin-bottom: 30px;
+  background-color: white;
+}
+td{
+  border:1px solid black;
+  min-height:200px;
+  padding:20px;
+}
+.row td{
+  width:20%;
+}
+table h2{
+  font-weight:bold;
+  font-size: 28px;
+  color: #CC0066;
+  margin-bottom: 10px;
+}
+td li{
+  margin-bottom: 15px;
+}
