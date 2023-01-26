@@ -1,14 +1,14 @@
 import { Router } from "express";
 
-export const eventsRoutes = (controller) => {
+export const companiesRoutes = (controller) => {
   const router = Router();
 
   router.get("/", (req, res) => {
-    controller.showHome(req, res);
+    controller.listCompanies(req, res);
   });
 
   router.get("/add", (req, res) => {
-    controller.showAddEvent(req, res);
+    controller.showAddCompanie(req, res);
   });
 
   router.get("/get/:id", (req, res) => {
@@ -16,19 +16,19 @@ export const eventsRoutes = (controller) => {
   });
 
   router.post("/add", (req, res) => {
-    controller.createEvent(req, res);
+    controller.createCompanie(req, res);
   });
 
   router.get("/edit/:id", (req, res) => {
-    controller.showEditEvent(req, res);
+    controller.showEditCompanie(req, res);
   });
 
   router.post("/edit/:id", (req, res) => {
-    controller.modifyEvent(req, res);
+    controller.modifyCompanie(req, res);
   });
 
   router.post("/delete/:id", (req, res) => {
-    controller.deleteEvent(req, res);
+    controller.deleteCompanie(req, res);
   });
 
   return router;

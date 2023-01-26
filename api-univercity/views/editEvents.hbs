@@ -12,12 +12,18 @@
   {{/if}}
       <div class="field">
         <div class="control">
-          <input class="input" name="name" placeholder='name' value="{{event.name}}">
+          <input class="input" name="title" placeholder='title' value="{{event.title}}">
         </div>
       </div>
       <div class="field">
         <div class="control">
+          <label for="">Description</label>
           <textarea name="description">{{event.description}}</textarea>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input name="image" type="url" placeholder="URL image" value="{{event.image}}">
         </div>
       </div>
       <div class="field">

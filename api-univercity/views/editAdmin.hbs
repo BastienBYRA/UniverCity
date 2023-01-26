@@ -6,16 +6,9 @@
 <div class="card">
   <div class="card-content">
   {{#if user._id}}
-  <form action="/api/users/delete/{{user._id}}"
-            method="POST"
-            onSubmit="if(!confirm('Voulez vous vraiment supprimer cet event ?')){return false;}">
-             <button type="submit">
-               Delete
-             </button>
-           </form>
-    <form method="POST" action="/api/users/edit/{{user._id}}" novalidate>
+    <form method="POST" action="/api/users/edit/admin/{{user._id}}" novalidate>
   {{else}}
-    <form method="POST" action="/api/users/add" novalidate>
+    <form method="POST" action="/api/users/add/admin" novalidate>
   {{/if}}
       <div class="field">
         <div class="control">
@@ -29,31 +22,12 @@
       </div>
       <div class="field">
         <div class="control">
-          <input class="input" name="INE" placeholder='INE' value="{{user.INE}}">
-        </div>
-      </div>
-      <div class="field">
-        <div class="control">
           <input class="input" type="email" name="email" placeholder='email' value="{{user.email}}">
         </div>
       </div>
       <div class="field">
         <div class="control">
           <input class="input" name="password" placeholder='password' value="{{user.password}}">
-        </div>
-      </div>
-      <div class="field">
-        <div class="control">
-          <textarea name="" id="">
-            {{#each user.subjects}}
-            {{this}}
-            {{/each}}
-          </textarea>
-          <select name="subjects" multiple>
-            {{#each subjectsForUser}}
-              <option value="{{this._id}}">{{this.name}}</option>
-            {{/each}}
-          </select>
         </div>
       </div>
       <div class="content">

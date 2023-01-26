@@ -19,11 +19,15 @@ import { subjectsRoutes } from "./routes/subjects.route.mjs";
 import { SubjectsController } from "./controllers/subjects.controller.mjs";
 import { MongoSubjectsRepository } from "./repositories/subjects.repository.mjs";
 
-const PORT = process.env.PORT || 3000;
+import { companiesRoutes } from "./routes/companies.route.mjs";
+import { CompaniesController } from "./controllers/companies.controller.mjs";
+import { MongoCompaniesRepository } from "./repositories/companies.repository.mjs";
+
+const PORT = process.env.PORT || 3001;
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:3001", // TODO Mettre à jour le port pour la prod
+    origin: ["http://152.228.210.58", "http://localhost:3000"], // TODO Mettre à jour le port pour la prod
   })
 );
 
@@ -52,10 +56,14 @@ const subjectsController = new SubjectsController(subjectsRepository);
 const usersRepository = new MongoUsersRepository();
 const usersController = new UsersController(usersRepository, subjectsRepository);
 
+const companiesRepository = new MongoCompaniesRepository();
+const companiesController = new CompaniesController(companiesRepository);
+
 app.use("/api/users", usersRoutes(usersController));
 app.use("/api/events", eventsRoutes(eventsController));
 app.use("/api/formations", formationsRoutes(formationsController));
 app.use("/api/subjects", subjectsRoutes(subjectsController));
+app.use("/api/companies", companiesRoutes(companiesController));
 
 mongoose.set("strictQuery", false);
 mongoose.connect("mongodb://localhost:27017/univercity", (error) => {

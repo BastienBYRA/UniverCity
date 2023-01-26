@@ -23,13 +23,14 @@ export class UsersController {
 
   getOne(req, res) {
     let id = req.params.id;
-    this.repository.getOne(id)
-    .then((formation) => {
-      res.send({code:200, formation});
-    })
-    .catch((err) => {
-      res.sendStatus(500);
-    });
+    this.repository
+      .getOne(id)
+      .then((formation) => {
+        res.send({ code: 200, formation });
+      })
+      .catch((err) => {
+        res.sendStatus(500);
+      });
   }
 
   showAddUser(req, res) {
@@ -38,17 +39,14 @@ export class UsersController {
     });
   }
 
-  createUser(req, res) {
-    const {
-      email,
-      lastName,
-      firstName,
-      password,
-      mobile,
-      INE,
-      subjects,
-    } = req.body;
+  showAddAdmin(req, res) {
+    res.render("editAdmin", { user: {} });
+  }
 
+  createUser(req, res) {
+    const { email, lastName, firstName, password, mobile, INE, subjects } =
+      req.body;
+    let isAdmin = false;
     bcrypt.genSalt(10, (err, salt) => {
       bcrypt.hash(password, salt).then((hash) => {
         this.usersRepository
@@ -59,16 +57,51 @@ export class UsersController {
             hash,
             mobile,
             INE,
-            subjects
+            subjects,
+            isAdmin
           )
           .then((user) => {
             res.send({ user });
           })
           .catch((err) => {
-            res.send({code:500, msg:err});
+            res.send({ code: 500, msg: err });
           });
       });
     });
+  }
+
+  createAdmin(req, res) {
+    this.usersRepository
+      .checkAdminExist()
+      .then(() => {
+        const { email, lastName, firstName, password, mobile, INE, subjects } =
+          req.body;
+        let isAdmin = true;
+        bcrypt.genSalt(10, (err, salt) => {
+          bcrypt.hash(password, salt).then((hash) => {
+            this.usersRepository
+              .create(
+                email,
+                lastName,
+                firstName,
+                hash,
+                mobile,
+                INE,
+                subjects,
+                isAdmin
+              )
+              .then((user) => {
+                res.send({ user });
+              })
+              .catch((err) => {
+                res.send({ code: 500, msg: err });
+              });
+          });
+        });
+      })
+      .catch((err) => {
+        console.log("Il y a deja un admin !");
+      });
   }
 
   /**
@@ -79,7 +112,7 @@ export class UsersController {
   logUser(req, res) {
     const { email, password } = req.body;
     console.log(email, password);
-    
+
     this.usersRepository
       .checkLogin(email, password)
       .then((user) => {
@@ -118,33 +151,18 @@ export class UsersController {
   }
 
   modifyUser(req, res) {
-    const {
-      email,
-      lastName,
-      firstName,
-      mobile,
-      INE,
-      subjects,
-    } = req.body;
+    const { email, lastName, firstName, mobile, INE, subjects } = req.body;
     const id = req.params.id;
 
     this.usersRepository
-      .update(
-        id,
-        email,
-        lastName,
-        firstName,
-        mobile,
-        INE,
-        subjects
-      )
+      .update(id, email, lastName, firstName, mobile, INE, subjects)
       .then((user) => {
         console.log(user);
-        
+
         res.send({ code: 200, user });
       })
       .catch((err) => {
-        res.send({code:500, msg:err});
+        res.send({ code: 500, msg: err });
       });
   }
 

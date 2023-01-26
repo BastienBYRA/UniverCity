@@ -2,11 +2,12 @@ import { mongoose } from "mongoose";
 
   const eventsSchema = mongoose.Schema(
     {
-      name: String,
+      title: String,
+      description: String,
+      image: String,
       dateCreation: String,
       dateBegin: String,
-      dateEnd: String,
-      description: String
+      dateEnd: String
     },
     {
       timestamps: true,

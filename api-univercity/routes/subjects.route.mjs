@@ -21,7 +21,7 @@ export const subjectsRoutes = (controller) => {
 
   router.get("/edit/:id", (req, res) => {
     controller.showEditSubject(req, res);
-  }); 
+  });
 
   router.post("/edit/:id", (req, res) => {
     controller.modifySubject(req, res);
@@ -30,7 +30,6 @@ export const subjectsRoutes = (controller) => {
   router.post("/delete/:id", (req, res) => {
     controller.deleteSubject(req, res);
   });
-  
+
   return router;
 };
-

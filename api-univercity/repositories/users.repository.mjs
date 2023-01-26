@@ -49,7 +49,20 @@ export class MongoUsersRepository {
     });
   }
 
-  create(email, lastName, firstName, password, mobile, INE, subjects) {
+  checkAdminExist() {
+    return new Promise((resolve, reject) => {
+      User.find({ isAdmin: true }, (err, user) => {
+        console.log('isAdmin' , user);
+        if (user[0] != null) {
+          reject();
+        } else {
+          resolve();
+        }
+      });
+    });
+  }
+
+  create(email, lastName, firstName, password, mobile, INE, subjects, isAdmin) {
     return new Promise((resolve, reject) => {
       User.findOne({ email: email }, (err, user) => {
         if (user) {
@@ -64,6 +77,7 @@ export class MongoUsersRepository {
               mobile,
               INE,
               subjects,
+              isAdmin,
             },
             (err, user) => {
               if (err) {
@@ -80,7 +94,7 @@ export class MongoUsersRepository {
 
   update(id, email, lastName, firstName, password, mobile, INE, subjects) {
     return new Promise((resolve, reject) => {
-      User.find({ email: email, '_id': {$ne : id}}, (err, user) => {
+      User.find({ email: email, _id: { $ne: id } }, (err, user) => {
         if (user[0] != null) {
           reject("This email is already used.");
         } else {

@@ -4,12 +4,32 @@ import Banner from "../components/Banner";
 import Card from "../components/Card";
 import Header from "../components/Header";
 import TitleWithSubtext from "../components/TitleWithSubtext";
-import formationData from "../data/formationPageContent.json";
+// import formationData from "../data/formationPageContent.json";
 import { HashLink } from "react-router-hash-link";
 
 class AccueilPage extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {listFormation: null}
+  }
+
+  componentDidMount = () => {
+    this.fetchFormation();
+  };
+
+  fetchFormation = async () => {
+    await fetch(`http://152.228.210.58/api/formations/`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+      })
+      .then((responseJson) => {
+        this.setState({listFormation : responseJson.formations})
+      })
+      .catch(async (error) => {
+        alert("Erreur, impossible de fetch la liste des formations")
+      });
   }
 
   render() {
@@ -60,8 +80,8 @@ class AccueilPage extends React.Component {
                 Nos formations
               </h1>
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12 my-12">
-                {formationData &&
-                  formationData.map((formation) => {
+                {this.state.listFormation &&
+                  this.state.listFormation.map((formation) => {
                     return (
                       <HashLink smooth to={"formation#" + formation._id}>
                         <Card title={formation.title} img={formation.img} />
