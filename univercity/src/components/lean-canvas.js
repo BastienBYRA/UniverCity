@@ -7,7 +7,7 @@ const LeanCanvas = () => {
       <h1 className="text-center text-3xl text-[#15191D] font-bold">Notre Lean Canvas</h1>
       <table>
         <tr className="row">
-          <td colSpan="2" rowSpan="2" className="">
+          <td colSpan="2" rowSpan="2" className="align-top">
             <h2>4 - Solution</h2>
             <ul>
               <li>Meilleur cadre de vie pour les étudiants</li>
@@ -23,7 +23,7 @@ const LeanCanvas = () => {
               </li>
             </ul>
           </td>
-          <td colSpan="2">
+          <td colSpan="2" className="align-top">
             <h2>2 - Problèmes</h2>
             <ul>
               <li>Motivation des étudiants</li>
@@ -31,7 +31,7 @@ const LeanCanvas = () => {
               <li>Pas de récompense de travail</li>
             </ul>
           </td>
-          <td colSpan="2" rowSpan="2">
+          <td colSpan="2" rowSpan="2" className="align-top">
             <h2>9 - Relation avec les utilisateurs</h2>
             <ul>
               <li>
@@ -59,14 +59,14 @@ const LeanCanvas = () => {
               </li>
             </ul>
           </td>
-          <td colSpan="2">
+          <td colSpan="2" className="align-top">
             <h2>3 - Proposition de valeur unique</h2>
             <p>
               Une cité autonome qui implique ses étudiants dans son
               fonctionnement
             </p>
           </td>
-          <td colSpan="2" rowSpan="2">
+          <td colSpan="2" rowSpan="2" className="align-top">
             <h2>1 - Utilisateurs</h2>
             <ul>
               <li>Étudiants</li>
@@ -75,14 +75,14 @@ const LeanCanvas = () => {
               <li>Employés hors universitaire (Boulanger, Artisan ...)</li>
               <li>Entreprise</li>
             </ul>
-            <h2>1.1 - Beta utilisateurs</h2>
+            <h2 className="mt-8">1.1 - Beta utilisateurs</h2>
             <ul>
               <li>Étudiants</li>
               <li>Professeurs</li>
             </ul>
           </td>
         </tr>
-        <tr className="row">
+        <tr className="row align-top">
           <td colSpan="2">
             <h2>6 - Indicateurs clés</h2>
             <ul>
@@ -91,7 +91,7 @@ const LeanCanvas = () => {
               <li>206 Entreprises partenaires</li>
             </ul>
           </td>
-          <td colSpan="2">
+          <td colSpan="2" className="align-top">
             <h2>5 - Stratégie d'adoption</h2>
             <p>
               Ville universitaire avec un système de points, propice à
@@ -101,7 +101,7 @@ const LeanCanvas = () => {
           </td>
         </tr>
         <tr>
-          <td colSpan="5">
+          <td colSpan="5" className="align-top">
             <h2>8 - Coûts</h2>
             <ul>
               <li>Construction + Entretien de la cité</li>
@@ -111,7 +111,7 @@ const LeanCanvas = () => {
               <li>Agents "municipaux"</li>
             </ul>
           </td>
-          <td colSpan="5">
+          <td colSpan="5" className="align-top">
             <h2>3 - Sources de revenus</h2>
             <ul>
               <li>L'Etat</li>

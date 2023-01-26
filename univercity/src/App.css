@@ -94,15 +94,21 @@ td{
   min-height:200px;
   padding:20px;
 }
-.row td{
-  width:20%;
-}
+
 table h2{
   font-weight:bold;
-  font-size: 28px;
+  font-size: 24px;
   color: #CC0066;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  line-height: normal;
 }
 td li{
-  margin-bottom: 15px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  color: #373737;
+}
+
+td ul {
+  list-style: disc;
+  margin-left: 5px;
 }
