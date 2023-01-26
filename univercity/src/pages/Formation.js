@@ -36,7 +36,7 @@ class FormationPage extends React.Component {
         <h1 className="text-3xl text-[#15191D] mb-6 font-bold text-center">
           Nos Formations
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 sm:mx-6 xl:mx-16 2xl:mx-56">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 sm:mx-6 xl:mx-16 2xl:mx-24">
           {this.state.listFormation &&
             this.state.listFormation.map((formation) => {
               return (
