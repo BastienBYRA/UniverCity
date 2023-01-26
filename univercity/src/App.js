@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "./components/Header";
-import CampusHead from "./components/campus.js";
 import DescriptionPage from "./pages/Description";
 import ActuPage from "./pages/Actus.js";
 import Inscription from "./pages/inscription";
@@ -12,6 +11,7 @@ import ContactPage from "./pages/Contact.js";
 import "./App.css";
 import "./font-awesome-4.7.0/css/font-awesome.min.css";
 import FormationPage from "./pages/Formation";
+import EntreprisesPage from "./pages/Entreprises";
 
 function App() {
   return (
@@ -25,6 +25,7 @@ function App() {
           <Route path="actus" element={<ActuPage />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="inscription" element={<Inscription />} />
+          <Route path="entreprises" element={<EntreprisesPage/>} />
         </Routes>
       </BrowserRouter>
       <Footer />

@@ -1,0 +1,12 @@
+[
+  {
+    "image": "https://news.microsoft.com/wp-content/uploads/prod/sites/113/2017/06/Microsoft-logo_rgb_c-gray.png",
+    "description": "Microsoft Corporation est une multinationale informatique et micro-informatique américaine, fondée en 1975 par Bill Gates et Paul Allen.",
+    "lien": "https://www.microsoft.com/fr-fr"
+  },
+  {
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0hUffaLPqEj6iL-B5Xj7xI8Mk9vFeNn1JbA&usqp=CAU",
+    "description": "Tesla Inc. est un constructeur automobile de voitures électriques dont le siège social se situe aux États-Unis.",
+    "lien": "https://www.tesla.com/fr_fr"
+  }
+]
