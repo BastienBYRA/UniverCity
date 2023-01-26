@@ -59,7 +59,8 @@ function Inscription() {
                     })}
             </div>
             <div className="w-9/12 mx-auto text-[#373737] text-[15px]">
-                <h1 className="text-3xl text-[#15191D] font-bold text-center mb-10">Inscrivez vous</h1>
+                <div class="endive"><h1 className="text-3xl text-[#15191D] font-bold text-center mb-10">Inscrivez vous</h1>
+                <hr/></div>
                 <form onSubmit={onSubmit} className="w-4/6 flex flex-col mx-auto" action="#" method="POST">
                     <div className="flex justify-around mb-4">
                         <input
