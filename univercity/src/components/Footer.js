@@ -63,7 +63,7 @@ function Footer() {
                   className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
                     focus:outline-none focus:border-2 focus:border-[#CC0066] block w-full p-2.5 dark:bg-gray-700
                     dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500
-                    dark:focus:border-primary-500 dark:shadow-sm-light"
+                    dark:focus:border-primary-500 dark:shadow-sm-light bg-gray-700 border-gray-700"
                   placeholder="Email"
                   required
                   name="mail"
@@ -77,7 +77,8 @@ function Footer() {
                   id="subject"
                   className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm
                       focus:outline-none focus:border-2 focus:border-[#CC0066] dark:bg-gray-700 dark:border-gray-600
-                      dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                      dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500
+                      dark:shadow-sm-light bg-gray-700 border-gray-700"
                   placeholder="Sujet"
                   required
                   name="nom"
@@ -92,7 +93,7 @@ function Footer() {
                   className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border
                     border-gray-300 focus:outline-none focus:border-2 focus:border-[#CC0066] dark:bg-gray-700
                     dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500
-                    dark:focus:border-primary-500"
+                    dark:focus:border-primary-500 bg-gray-700 border-gray-700"
                   placeholder="Message"
                   name="prenom"
                   required
