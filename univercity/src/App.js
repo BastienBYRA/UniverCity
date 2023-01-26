@@ -23,11 +23,12 @@ function App() {
         <Routes>
           <Route path="/" element={<AccueilPage />} />
           <Route path="description" element={<DescriptionPage />} />
-          <Route path="formation" element={<LeanCanvas />} />
+          <Route path="formation" element={<FormationPage />} />
           <Route path="actus" element={<ActuPage />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="inscription" element={<Inscription />} />
           <Route path="entreprises" element={<EntreprisesPage/>} />
+          <Route path="canva" element={<LeanCanvas/>} />
         </Routes>
       </BrowserRouter>
       <Footer />

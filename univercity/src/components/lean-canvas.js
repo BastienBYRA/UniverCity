@@ -4,10 +4,10 @@ const LeanCanvas = () => {
   return (
     <div className="mb-8">
       <Banner />
-      <h1 class="text-center text-3xl text-[#15191D] font-bold">Notre Lean Canvas</h1>
+      <h1 className="text-center text-3xl text-[#15191D] font-bold">Notre Lean Canvas</h1>
       <table>
-        <tr class="row">
-          <td colSpan="2" rowSpan="2">
+        <tr className="row">
+          <td colSpan="2" rowSpan="2" className="">
             <h2>4 - Solution</h2>
             <ul>
               <li>Meilleur cadre de vie pour les étudiants</li>
@@ -82,7 +82,7 @@ const LeanCanvas = () => {
             </ul>
           </td>
         </tr>
-        <tr class="row">
+        <tr className="row">
           <td colSpan="2">
             <h2>6 - Indicateurs clés</h2>
             <ul>
