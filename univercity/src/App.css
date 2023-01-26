@@ -112,3 +112,9 @@ td ul {
   list-style: disc;
   margin-left: 5px;
 }
+
+.borderTitle::before{
+  content:"";
+  border: 4px solid #CC0066;
+  margin-right:10px;
+}
