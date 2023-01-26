@@ -12,7 +12,7 @@ class Header extends React.Component {
                         </a>
 
                         <div className="w-full md:block md:w-auto" id="navbar-default">
-                            <ul className="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 font-medium">
+                            <ul className="flex flex-col p-4 mt-4 md:flex-row md:flex-wrap md:space-x-8 md:mt-0 font-medium">
                                 <li>
                                     <a href="/description"
                                        className="block py-2 pl-3 text-[#636363] hover:text-[#CC0066] no-underline text-base uppercase"
