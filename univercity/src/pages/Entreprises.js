@@ -7,7 +7,7 @@ import CardWithDesc from "../components/CardWithDesc";
 class EntreprisesPage extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {listFormation: null}
+        this.state = {listEntreprises: null}
     }
 
     componentDidMount = () => {
