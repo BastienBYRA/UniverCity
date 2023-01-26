@@ -2,16 +2,33 @@ import React from "react";
 import { Link } from "react-router-dom";
 import CardWithDesc from "../components/CardWithDesc";
 import RowFormation from "../components/RowFormation";
-import formationData from "../data/formationPageContent.json";
+// import formationData from "../data/formationPageContent.json";
 
 class FormationPage extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {listFormation: null}
   }
 
   componentDidMount = () => {
     window.scrollTo(0, 0);
+    this.fetchFormation();
   };
+
+  fetchFormation = async () => {
+    await fetch(`http://152.228.210.58/api/formations/`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+      })
+      .then((responseJson) => {
+        this.setState({listFormation : responseJson.formations})
+      })
+      .catch(async (error) => {
+        alert("Erreur, impossible de fetch la liste des formations")
+      });
+  }
 
   render() {
     return (
@@ -20,8 +37,8 @@ class FormationPage extends React.Component {
           Nos Formations
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12 mx-6 xl:mx-24 2xl:mx-56">
-          {formationData &&
-            formationData.map((formation) => {
+          {this.state.listFormation &&
+            this.state.listFormation.map((formation) => {
               return (
                 <CardWithDesc
                   title={formation.title}
@@ -33,8 +50,8 @@ class FormationPage extends React.Component {
         </div>
 
         <div className="mt-12">
-          {formationData &&
-            formationData.map((formation) => {
+          {this.state.listFormation &&
+            this.state.listFormation.map((formation) => {
               return (
                 <RowFormation
                   _id={formation._id}
