@@ -45,26 +45,26 @@ function Inscription() {
             </div>
             <div className="w-9/12 mx-auto text-[#373737] text-[15px]">
                 <ul className="mb-16">
-                    <li className="mb-3">
-                        <h2 className="font-medium text-2xl mb-1 text-[#CC0066]">Opportunités d'enseignement :</h2>
+                    <li className="mb-4">
+                        <h2 className="font-medium text-2xl text-[#CC0066]">Opportunités d'enseignement :</h2>
                         Les professeurs ont la possibilité d'enseigner à une population diversifiée d'étudiants,
                         ce qui peut offrir des défis et des opportunités d'enseignement
                         passionnants.
                     </li>
-                    <li className="mb-3">
-                        <h2 className="font-medium text-2xl mb-1 text-[#CC0066]">Recherche et développement :</h2>
+                    <li className="mb-4">
+                        <h2 className="font-medium text-2xl text-[#CC0066]">Recherche et développement :</h2>
                         Les professeurs peuvent avoir accès à des installations de recherche de pointe et à
                         des partenariats avec des entreprises et des organisations qui
                         peuvent les aider à mener des recherches de haut niveau et à
                         développer leur carrière professionnelle.
                     </li>
-                    <li className="mb-3">
-                        <h2 className="font-medium text-2xl mb-1 text-[#CC0066]">Ressources pour l'enseignement :</h2>
+                    <li className="mb-4">
+                        <h2 className="font-medium text-2xl text-[#CC0066]">Ressources pour l'enseignement :</h2>
                         Les professeurs peuvent avoir accès à des ressources pédagogiques et technologiques
                         pour améliorer leur enseignement et leur rendre plus efficace.
                     </li>
-                    <li className="mb-3">
-                        <h2 className="font-medium text-2xl mb-1 text-[#CC0066]">
+                    <li className="mb-4">
+                        <h2 className="font-medium text-2xl text-[#CC0066]">
                             Possibilité de participer à des projets de développement de la
                             ville :
                         </h2>{" "}
@@ -73,7 +73,7 @@ function Inscription() {
                         communauté.
                     </li>
                     <li>
-                        <h2 className="font-medium text-2xl mb-1 text-[#CC0066]">Ambiance de travail agréable :</h2>
+                        <h2 className="font-medium text-2xl text-[#CC0066]">Ambiance de travail agréable :</h2>
                         Les professeurs peuvent bénéficier d'un environnement de travail stimulant et
                         collaboratif, avec des collègues et des étudiants passionnés.
                     </li>
