@@ -8,5 +8,15 @@
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0hUffaLPqEj6iL-B5Xj7xI8Mk9vFeNn1JbA&usqp=CAU",
     "description": "Tesla Inc. est un constructeur automobile de voitures électriques dont le siège social se situe aux États-Unis.",
     "lien": "https://www.tesla.com/fr_fr"
+  },
+  {
+    "image": "https://www.vinci-energies.com/app/uploads/sites/7/2021/09/logo-VINCI-1-1.png",
+    "description": "Vinci est une entreprise française de concessions et de construction, spécialisée dans les infrastructures de transport, l'énergie et l'immobilier.",
+    "lien": "https://www.vinci.com/"
+  },
+  {
+    "image": "https://mma.prnewswire.com/media/1586483/Illumina_Logo.jpg?p=facebook",
+    "description": "Illumina est une entreprise américaine de biotechnologie spécialisée dans la fabrication d'équipements et de consommables pour la génomique de haut débit et la recherche biologique.",
+    "lien": "https://www.illumina.com/"
   }
 ]
