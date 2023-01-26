@@ -1,12 +1,31 @@
 import React from "react";
 import CardWithDesc from "../components/CardWithDesc";
-import actuData from "../data/actuPageContent.json";
 
 class ActuPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { listActus: null };
-  }
+    constructor(props) {
+        super(props);
+        this.state = {listActus: null}
+      }
+    
+      componentDidMount = () => {
+        window.scrollTo(0, 0);
+        this.fetchActus();
+      };
+    
+      fetchActus = async () => {
+        await fetch(process.env.REACT_APP_API_URL + `/events/`)
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            }
+          })
+          .then((responseJson) => {
+            this.setState({listActus : responseJson.events})
+          })
+          .catch(async (error) => {
+            alert("Erreur, impossible de fetch la liste des formations")
+          });
+      }
 
   componentDidMount = () => {
     window.scrollTo(0, 0);

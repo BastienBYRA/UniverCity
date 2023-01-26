@@ -1,8 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import CardWithDesc from "../components/CardWithDesc";
 import RowFormation from "../components/RowFormation";
-// import formationData from "../data/formationPageContent.json";
 
 class FormationPage extends React.Component {
   constructor(props) {
@@ -16,7 +14,7 @@ class FormationPage extends React.Component {
   };
 
   fetchFormation = async () => {
-    await fetch(`http://152.228.210.58/api/formations/`)
+    await fetch(process.env.REACT_APP_API_URL + `/formations`)
       .then((response) => {
         if (response.ok) {
           return response.json();
