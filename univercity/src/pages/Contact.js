@@ -13,6 +13,7 @@ function ContactPage() {
     password: "",
     mail: "",
     phone: "",
+    message: "",
   });
   const onSubmit = (e) => {
     e.preventDefault();
@@ -81,9 +82,9 @@ function ContactPage() {
               <textarea
                 placeholder="Message"
                 id="message"
-                name="prenom"
+                name="message"
                 required
-                value={toSend.prenom}
+                value={toSend.message}
                 onChange={handleChange}
                 className="w-full bg-white rounded border border-gray-300 focus:outline-none focus:border-2 focus:border-[#CC0066] h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
               ></textarea>
