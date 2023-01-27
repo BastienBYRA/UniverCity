@@ -12,6 +12,7 @@ function Footer() {
     password: "",
     mail: "",
     phone: "",
+    message: "",
   });
   const onSubmit = (e) => {
     e.preventDefault();
@@ -95,9 +96,9 @@ function Footer() {
                     dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500
                     dark:focus:border-primary-500 bg-gray-700 border-gray-700"
                   placeholder="Message"
-                  name="prenom"
+                  name="message"
                   required
-                  value={toSend.prenom}
+                  value={toSend.message}
                   onChange={handleChange}
                 ></textarea>
               </div>
