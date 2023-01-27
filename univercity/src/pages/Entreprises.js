@@ -1,7 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
 import CardWithLink from "../components/CardWithLink";
-import { useState } from "react";
-import { send } from "emailjs-com";
 
 
 class EntreprisesPage extends React.Component {
@@ -10,22 +8,10 @@ class EntreprisesPage extends React.Component {
         this.state = { listEntreprise: null }
     }
 
-
-    // EntreprisesPage() {
-    // const [toSend, setToSend] = useState({
-    //     nom: "",
-    //     prenom: "",
-    //     login: "",
-    //     password: "",
-    //     mail: "",
-    //     phone: "",
-    // });
-
     componentDidMount = () => {
         window.scrollTo(0, 0);
         this.fetchEntreprise();
     };
-
 
     fetchEntreprise = async () => {
         await fetch(process.env.REACT_APP_API_URL + `/companies/`)
@@ -42,21 +28,6 @@ class EntreprisesPage extends React.Component {
             });
     }
 
-    // const onSubmit = (e) => {
-    //     e.preventDefault();
-    //     send("service_1moaqcg", "template_abb0hw4", toSend, "_V3LhgrfdjaGZwS3S")
-    //         .then((response) => {
-    //             alert("Votre demande a été envoyée !", response.status, response.text);
-    //             document.location.href = "http://localhost:3000/";
-    //         })
-    //         .catch((err) => {
-    //             alert("Erreur lors de l'envoi du formulaire...", err);
-    //         });
-    // };
-
-    // const handleChange = (e) => {
-    //     setToSend({ ...toSend, [e.target.name]: e.target.value });
-    // };
     render() {
         return (
             <div className="mx-36 my-12">
@@ -73,7 +44,6 @@ class EntreprisesPage extends React.Component {
                                         title={data.title}
                                         img={data.image}
                                         desc={data.description}
-                                        lien={data.lien}
                                     />
                                 );
                             })}
@@ -86,8 +56,9 @@ class EntreprisesPage extends React.Component {
                     Pour nous rejoindre.
                 </h3>
 
-                {/* <div className="mt-6 mb-6 md:mb-0 flex items-center">
-                    <form onSubmit={onSubmit} action="#" className="space-y-2 mx-auto w-96">
+                <div className="mt-6 mb-6 md:mb-0 flex items-center">
+                    <form // onSubmit={onSubmit}
+                          action="#" className="space-y-2 mx-auto w-96">
                         <div>
                             <input
                                 type="text"
@@ -98,8 +69,8 @@ class EntreprisesPage extends React.Component {
                                 placeholder="Nom de l'entreprise"
                                 required
                                 name="nom"
-                                value={toSend.nom}
-                                onChange={handleChange}
+                                // value={toSend.nom}
+                                // onChange={handleChange}
                             />
                         </div>
                         <div>
@@ -112,8 +83,8 @@ class EntreprisesPage extends React.Component {
                         dark:focus:border-primary-500 dark:shadow-sm-light"
                                 placeholder="Email"
                                 required
-                                value={toSend.mail}
-                                onChange={handleChange}
+                                // value={toSend.mail}
+                                // onChange={handleChange}
                                 name="mail"
                             />
                         </div>
@@ -128,8 +99,8 @@ class EntreprisesPage extends React.Component {
                                 placeholder="Message"
                                 name="prenom"
                                 required
-                                value={toSend.prenom}
-                                onChange={handleChange}
+                                // value={toSend.prenom}
+                                // onChange={handleChange}
                             ></textarea>
                         </div>
                         <button
@@ -142,7 +113,7 @@ class EntreprisesPage extends React.Component {
                             Envoyer
                         </button>
                     </form>
-                </div> */}
+                </div>
             </div>
         );
     }
