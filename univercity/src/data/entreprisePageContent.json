@@ -10,6 +10,16 @@
     "lien": "https://www.tesla.com/fr_fr"
   },
   {
+    "image": "https://www.vinci-energies.com/app/uploads/sites/7/2021/09/logo-VINCI-1-1.png",
+    "description": "Vinci est une entreprise française de concessions et de construction, spécialisée dans les infrastructures de transport, l'énergie et l'immobilier.",
+    "lien": "https://www.vinci.com/"
+  },
+  {
+    "image": "https://mma.prnewswire.com/media/1586483/Illumina_Logo.jpg?p=facebook",
+    "description": "Illumina est une entreprise américaine de biotechnologie spécialisée dans la fabrication d'équipements et de consommables pour la génomique de haut débit et la recherche biologique.",
+    "lien": "https://www.illumina.com/"
+  },
+  {
     "image": "https://m.media-amazon.com/images/G/08/social_share/amazon_logo._CB633266374_.png",
     "description": "Entreprise de e-commerce",
     "lien": "https://www.amazon.fr/"

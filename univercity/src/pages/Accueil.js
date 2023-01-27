@@ -18,7 +18,7 @@ class AccueilPage extends React.Component {
   };
 
   fetchFormation = async () => {
-    await fetch(`http://152.228.210.58/api/formations/`)
+    await fetch(process.env.REACT_APP_API_URL + `/formations/`)
       .then((response) => {
         if (response.ok) {
           return response.json();

@@ -13,7 +13,7 @@ class ActuPage extends React.Component {
   };
 
   fetchActus = async () => {
-    await fetch(process.env.REACT_APP_API_URL + `/events/`)
+    await fetch(process.env.REACT_APP_API_URL + `/events`)
       .then((response) => {
         if (response.ok) {
           return response.json();
