@@ -18,5 +18,20 @@
     "image": "https://mma.prnewswire.com/media/1586483/Illumina_Logo.jpg?p=facebook",
     "description": "Illumina est une entreprise américaine de biotechnologie spécialisée dans la fabrication d'équipements et de consommables pour la génomique de haut débit et la recherche biologique.",
     "lien": "https://www.illumina.com/"
+  },
+  {
+    "image": "https://m.media-amazon.com/images/G/08/social_share/amazon_logo._CB633266374_.png",
+    "description": "Entreprise de e-commerce",
+    "lien": "https://www.amazon.fr/"
+  },
+  {
+  "image": "https://upload.wikimedia.org/wikipedia/fr/thumb/4/47/Nvidia_%28logo%29.svg/1200px-Nvidia_%28logo%29.svg.png",
+  "description": "Créateur de carte graphique et de data-centeur",
+  "lien": "https://www.nvidia.com/fr-fr/"
+  },
+  {
+  "image":"https://www.dynamique-mag.com/wp-content/uploads/Intel-780x470.png",
+  "description":"Intel est un grand fabricateur de puces pour pc",
+  "lien":"https://www.intel.fr/content/www/fr/fr/homepage.html"
   }
 ]
