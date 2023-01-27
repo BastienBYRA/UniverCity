@@ -24,7 +24,7 @@ function Inscription() {
         )
             .then((response) => {
                 alert('Votre demande a été envoyée !', response.status, response.text);
-                document.location.href = "http://localhost:3000/";
+                document.location.href = process.env.REACT_APP_URL;
             })
             .catch((err) => {
                 alert('Erreur lors de l\'envoi du formulaire...', err);

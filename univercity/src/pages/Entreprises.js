@@ -5,7 +5,7 @@ import CardWithLink from "../components/CardWithLink";
 class EntreprisesPage extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { listEntreprise: null }
+        this.state = {listEntreprise: null}
     }
 
     componentDidMount = () => {
@@ -21,7 +21,7 @@ class EntreprisesPage extends React.Component {
                 }
             })
             .then((responseJson) => {
-                this.setState({ listEntreprise: responseJson.companies })
+                this.setState({listEntreprise: responseJson.companies})
             })
             .catch(async (error) => {
                 alert("Erreur, impossible de fetch la liste des formations")
@@ -40,11 +40,13 @@ class EntreprisesPage extends React.Component {
                         {this.state.listEntreprise &&
                             this.state.listEntreprise.map((data) => {
                                 return (
-                                    <CardWithLink
-                                        title={data.title}
-                                        img={data.image}
-                                        desc={data.description}
-                                    />
+                                    <a href={data.siteLink} target="_blank">
+                                        <CardWithLink
+                                            title={data.title}
+                                            img={data.image}
+                                            desc={data.description}
+                                        />
+                                    </a>
                                 );
                             })}
                     </div>
@@ -58,7 +60,7 @@ class EntreprisesPage extends React.Component {
 
                 <div className="mt-6 mb-6 md:mb-0 flex items-center">
                     <form // onSubmit={onSubmit}
-                          action="#" className="space-y-2 mx-auto w-96">
+                        action="#" className="space-y-2 mx-auto w-96">
                         <div>
                             <input
                                 type="text"
