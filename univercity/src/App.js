@@ -14,6 +14,7 @@ import "./App.css";
 import "./font-awesome-4.7.0/css/font-awesome.min.css";
 import FormationPage from "./pages/Formation";
 import EntreprisesPage from "./pages/Entreprises";
+import Mentions from "./components/mentions";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="inscription" element={<Inscription />} />
           <Route path="entreprises" element={<EntreprisesPage/>} />
           <Route path="canva" element={<LeanCanvas/>} />
+          <Route path="mentions-legales" element={<Mentions />} />
         </Routes>
       </BrowserRouter>
       <Footer />
