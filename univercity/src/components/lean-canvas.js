@@ -102,7 +102,7 @@ const LeanCanvas = () => {
         </tr>
         <tr>
           <td colSpan="5" className="align-top">
-            <h2>8 - Coûts</h2>
+            <h2>7 - Coûts</h2>
             <ul>
               <li>Construction + Entretien de la cité</li>
               <li>Matériel</li>
@@ -112,7 +112,7 @@ const LeanCanvas = () => {
             </ul>
           </td>
           <td colSpan="5" className="align-top">
-            <h2>3 - Sources de revenus</h2>
+            <h2>8 - Sources de revenus</h2>
             <ul>
               <li>L'Etat</li>
               <li>Prix du campus pour chaque étudiant inscrit</li>
