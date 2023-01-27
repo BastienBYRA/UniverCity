@@ -2,30 +2,10 @@ import React from "react";
 import CardWithDesc from "../components/CardWithDesc";
 
 class ActuPage extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {listActus: null}
-      }
-    
-      componentDidMount = () => {
-        window.scrollTo(0, 0);
-        this.fetchActus();
-      };
-    
-      fetchActus = async () => {
-        await fetch(process.env.REACT_APP_API_URL + `/events/`)
-          .then((response) => {
-            if (response.ok) {
-              return response.json();
-            }
-          })
-          .then((responseJson) => {
-            this.setState({listActus : responseJson.events})
-          })
-          .catch(async (error) => {
-            alert("Erreur, impossible de fetch la liste des formations")
-          });
-      }
+  constructor(props) {
+    super(props);
+    this.state = { listActus: null }
+  }
 
   componentDidMount = () => {
     window.scrollTo(0, 0);
@@ -33,19 +13,19 @@ class ActuPage extends React.Component {
   };
 
   fetchActus = async () => {
-    await fetch(`http://152.228.210.58/api/events/`)
+    await fetch(process.env.REACT_APP_API_URL + `/events/`)
       .then((response) => {
         if (response.ok) {
           return response.json();
         }
       })
       .then((responseJson) => {
-        this.setState({ listActus: responseJson.events });
+        this.setState({ listActus: responseJson.events })
       })
       .catch(async (error) => {
-        alert("Erreur, impossible de fetch la liste des formations");
+        alert("Erreur, impossible de fetch la liste des formations")
       });
-  };
+  }
 
   render() {
     return (
